@@ -133,7 +133,7 @@ dm_1, dm_2 \\ débit massique de l'étage 1 (resp. 2)
 
 ****Calcul de trajectoire ***************************************
 
--> Phase propulsée avant t1, cas bi-étage
+-> Phase propulsée avant t1, cas bi-étage 
 
 M_2,i = M_2,0		  \\m_étage 2 ne varie pas pendant cette étape	
 M_0,i = M0 - dm_1.ti  \\Màj masse_total avec débit dm_1
@@ -217,8 +217,9 @@ P_i  = poussée calculée par méthode getloidePoussée1() assosciée à étage 
 
 \end{verbatim}
 
+Pendant les premiers instants du décollage, on pourra considérer que la fusée bi-étage est guidée par une rampe inclinée et surélevée. Il faudra le prendre en compte dans les données initiales ($X_{0}$ et ($Z_{0}$) et écrire que $\theta$ (= $\theta_{rampe}$) va rester constant pendant cette période. On ne tiendra plus compte de la rampe lorsque l'altitude $Z_{i} - Z_{0}$ sera supérieure à L.sin($\theta_{rampe}$) (L = longueur de la rampe).\\
 
-Pour le reste des phases de vol\footnote{On peut considérer pendant le vol bi-étagée lors de la phase propulsée l'existence d'une rampe surélevée. On peut voir les modifications à apporter dans l'algorithme dans le rapport 1.} (ouverture du parachute), il suffit simplement d'appliquer le même algorithme décrit dans le paragraphe précédent : 
+Pour la phase du parachute, sous l'action du poids et de la résistance de l'air seulement, la vitesse augmentera ou diminuera jusqu'à ce que la trainée égale le poids. L'accélération du mouvement étant alors nulle, la vitesse restera constante (vitesse limite $V_{l}$).
 
 \begin{verbatim}
 P = R   V = Cste = V_l 
