@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TJ>
+  <TabbedPane name="Data">
+    <Panel name="Stabilité">
+      <String name="Type_de_fusée">Microfusée</String>
+      <Real name="Masse" unit="g">5.49E2</Real>
+      <Real name="Centre_de_masse" unit="mm">3.59E2</Real>
+      <Real name="Longueur_totale" unit="mm">5.69E2</Real>
+      <String name="Moteur">µ-propu C6-3</String>
+      <Real name="Position" unit="mm">5.69E2</Real>
+      <String name="Ogive">Ogivale (pointue)</String>
+      <Real name="Hauteur" unit="mm">1.26E2</Real>
+      <Real name="Diamètre" unit="mm">4.4E1</Real>
+      <String name="Ailerons">Mono-empennage</String>
+      <Real name="Emplanture" unit="mm">1.35E2</Real>
+      <Real name="Saumon" unit="mm">1.35E2</Real>
+      <Real name="Flèche" unit="mm">0.0E0</Real>
+      <Real name="Semi-envergure" unit="mm">9.0E1</Real>
+      <Real name="Epaisseur" unit="mm">2.0E0</Real>
+      <Integer name="Nombre">4</Integer>
+      <Real name="Position" unit="mm">1.06E3</Real>
+      <Real name="Diamètre" unit="mm">6.5E1</Real>
+      <String name="Transitions">Pas de transition</String>
+      <Boolean name="Résultats_intermédiaires">false</Boolean>
+    </Panel>
+    <Panel name="Trajectoire">
+      <Real name="Masse_totale" unit="g">5.73E2</Real>
+      <Real name="Surface_Réf." unit="mm^2">4.038E3</Real>
+      <Real name="Cx">5.0E-1</Real>
+      <Real name="Longueur" unit="mm">3.0E3</Real>
+      <Real name="Inclinaison" unit="deg">8.0E1</Real>
+      <Real name="Altitude" unit="mm">0.0E0</Real>
+      <Real name="Masse" unit="g">2.65E3</Real>
+      <Real name="Vitesse_vent" unit="m/s">1.0E1</Real>
+      <String name="Nombre_de_parachute(s)">1</String>
+      <Real name="Ouverture_para" unit="s">7.0E0</Real>
+      <String name="Type_de_parachute">Disque</String>
+      <Real name="Dimension_1" unit="mm">2.25E2</Real>
+      <Real name="Dimension_2" unit="mm">5.0E1</Real>
+      <Real name="Surface_para" unit="mm^2">1.512E5</Real>
+      <Real name="Cx_parachute">1.0E0</Real>
+      <Real name="Vitesse_de_descente" unit="m/s">1.2997E1</Real>
+    </Panel>
+  </TabbedPane>
+</TJ>
+

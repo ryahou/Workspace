@@ -1,0 +1,7 @@
+;
+;	CNES/DLA/SDT/SPC
+;	31/05/2017
+;	pas de moteur
+;
+MoteurInactif 0 0 P 0 0 X
+1    0

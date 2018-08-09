@@ -1,0 +1,14 @@
+;
+;	CNES/DLA/SDT/SPC
+;	10/03/2017
+;	Cariacou (Lacroix)
+;	le meilleur moteur du monde
+;
+Cariacou 40 76 P 0.070 0.220 LC
+0.02    320
+0.04    170
+0.05    205
+0.06    217
+0.94    85
+0.942    82
+0.95    0

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TJ>
+	<TabbedPane name = "Data"/>
+	<elancement value = "16"/>
+	<boxMasse value = "3.5"/>
+</TJ>
