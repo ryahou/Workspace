@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.7.20)  6 AUG 2018 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.7.20)  9 AUG 2018 10:55
 entering extended mode
 **./week1.tex
 (week1.tex
@@ -579,6 +579,14 @@ Package: babel 2018/06/05 3.22 The Babel package
 f"
 File: switch.def 2018/06/05 3.22 Babel switching mechanism
 )
+*************************************
+* Local config file bblopts.cfg used
+*
+("d:\Users\ryahou\AppData\Local\Programs\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg
+"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
 ("d:\Users\ryahou\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel-french\fr
 ench.ldf"
 Language: french 2018/07/06 v3.5a French support from the babel system
@@ -707,20 +715,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-<Kourou---Decollage-Ariane-5---V184.jpg, id=42, 205.2468pt x 289.08pt>
-File: Kourou---Decollage-Ariane-5---V184.jpg Graphic file (type jpg)
-<use Kourou---Decollage-Ariane-5---V184.jpg>
-Package pdftex.def Info: Kourou---Decollage-Ariane-5---V184.jpg  used on input 
-line 30.
+<pictures/Kourou---Decollage-Ariane-5---V184.jpg, id=42, 205.2468pt x 289.08pt>
+
+File: pictures/Kourou---Decollage-Ariane-5---V184.jpg Graphic file (type jpg)
+<use pictures/Kourou---Decollage-Ariane-5---V184.jpg>
+Package pdftex.def Info: pictures/Kourou---Decollage-Ariane-5---V184.jpg  used 
+on input line 30.
 (pdftex.def)             Requested size: 113.81102pt x 160.30014pt.
 [1
 
-{d:/Users/ryahou/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Kourou--
--Decollage-Ariane-5---V184.jpg>]
-<phases_vol.PNG, id=55, 194.22563pt x 320.69812pt>
-File: phases_vol.PNG Graphic file (type png)
-<use phases_vol.PNG>
-Package pdftex.def Info: phases_vol.PNG  used on input line 51.
+{d:/Users/ryahou/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./pictures
+/Kourou---Decollage-Ariane-5---V184.jpg>]
+<pictures/phases_vol.PNG, id=55, 194.22563pt x 320.69812pt>
+File: pictures/phases_vol.PNG Graphic file (type png)
+<use pictures/phases_vol.PNG>
+Package pdftex.def Info: pictures/phases_vol.PNG  used on input line 51.
 (pdftex.def)             Requested size: 99.58464pt x 164.4347pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 64--68
@@ -732,30 +741,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-[2 <./phases_vol.PNG>]
+[2 <./pictures/phases_vol.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-<stable.png, id=70, 764.8575pt x 493.845pt>
-File: stable.png Graphic file (type png)
-<use stable.png>
-Package pdftex.def Info: stable.png  used on input line 111.
+<pictures/stable.png, id=70, 764.8575pt x 493.845pt>
+File: pictures/stable.png Graphic file (type png)
+<use pictures/stable.png>
+Package pdftex.def Info: pictures/stable.png  used on input line 111.
 (pdftex.def)             Requested size: 137.9979pt x 89.09924pt.
-<instable.png, id=71, 456.20438pt x 345.54094pt>
-File: instable.png Graphic file (type png)
-<use instable.png>
-Package pdftex.def Info: instable.png  used on input line 116.
+<pictures/instable.png, id=71, 456.20438pt x 345.54094pt>
+File: pictures/instable.png Graphic file (type png)
+<use pictures/instable.png>
+Package pdftex.def Info: pictures/instable.png  used on input line 116.
 (pdftex.def)             Requested size: 137.9979pt x 104.52249pt.
-[3 <./stable.png> <./instable.png>]
+[3 <./pictures/stable.png> <./pictures/instable.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
-<ammortissement.PNG, id=87, 529.98pt x 297.36093pt>
-File: ammortissement.PNG Graphic file (type png)
-<use ammortissement.PNG>
-Package pdftex.def Info: ammortissement.PNG  used on input line 138.
+<pictures/ammortissement.PNG, id=87, 529.98pt x 297.36093pt>
+File: pictures/ammortissement.PNG Graphic file (type png)
+<use pictures/ammortissement.PNG>
+Package pdftex.def Info: pictures/ammortissement.PNG  used on input line 138.
 (pdftex.def)             Requested size: 142.26378pt x 79.82117pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 149--150
@@ -767,53 +776,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
-[4 <./ammortissement.PNG>]
+[4 <./pictures/ammortissement.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
-<schema.PNG, id=103, 392.96812pt x 508.90125pt>
-File: schema.PNG Graphic file (type png)
-<use schema.PNG>
-Package pdftex.def Info: schema.PNG  used on input line 174.
+<pictures/schema.PNG, id=103, 392.96812pt x 508.90125pt>
+File: pictures/schema.PNG Graphic file (type png)
+<use pictures/schema.PNG>
+Package pdftex.def Info: pictures/schema.PNG  used on input line 174.
 (pdftex.def)             Requested size: 256.0748pt x 331.64383pt.
-[5 <./schema.PNG>]
+[5 <./pictures/schema.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
-<pegase.PNG, id=110, 901.86937pt x 625.58719pt>
-File: pegase.PNG Graphic file (type png)
-<use pegase.PNG>
-Package pdftex.def Info: pegase.PNG  used on input line 195.
+<pictures/pegase.PNG, id=110, 901.86937pt x 625.58719pt>
+File: pictures/pegase.PNG Graphic file (type png)
+<use pictures/pegase.PNG>
+Package pdftex.def Info: pictures/pegase.PNG  used on input line 195.
 (pdftex.def)             Requested size: 312.9803pt x 217.09738pt.
-
-LaTeX Warning: Reference `peg1' on page 6 undefined on input line 206.
-
-
-LaTeX Warning: Reference `peg1' on page 6 undefined on input line 206.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
-[6 <./pegase.PNG>]
-
-LaTeX Warning: Reference `peg2' on page 7 undefined on input line 210.
-
-
-LaTeX Warning: Reference `peg2' on page 7 undefined on input line 210.
-
-<pegase2.PNG, id=119, 886.06032pt x 529.98pt>
-File: pegase2.PNG Graphic file (type png)
-<use pegase2.PNG>
-Package pdftex.def Info: pegase2.PNG  used on input line 217.
+[6 <./pictures/pegase.PNG>]
+<pictures/pegase2.PNG, id=123, 886.06032pt x 529.98pt>
+File: pictures/pegase2.PNG Graphic file (type png)
+<use pictures/pegase2.PNG>
+Package pdftex.def Info: pictures/pegase2.PNG  used on input line 217.
 (pdftex.def)             Requested size: 312.9803pt x 187.20209pt.
-
-LaTeX Warning: Reference `scheme' on page 7 undefined on input line 223.
-
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 224.
+
 
 ("d:\Users\ryahou\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -828,7 +823,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
 
-[7 <./pegase2.PNG>]
+[7 <./pictures/pegase2.PNG>]
 Overfull \hbox (1.4154pt too wide) in paragraph at lines 263--263
 []\T1/cmtt/m/n/10 Gamma_xi = (P_i - R_i)/M_i.cos(theta_i)-g.cos(theta_i)sin(the
 ta_i)[] 
@@ -855,10 +850,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--291
  []
 
 [8]
-<code.PNG, id=134, 752.8125pt x 246.9225pt>
-File: code.PNG Graphic file (type png)
-<use code.PNG>
-Package pdftex.def Info: code.PNG  used on input line 296.
+<pictures/code.PNG, id=139, 752.8125pt x 246.9225pt>
+File: pictures/code.PNG Graphic file (type png)
+<use pictures/code.PNG>
+Package pdftex.def Info: pictures/code.PNG  used on input line 296.
 (pdftex.def)             Requested size: 426.79134pt x 139.98996pt.
 
 Overfull \hbox (81.79134pt too wide) in paragraph at lines 296--297
@@ -870,7 +865,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
-[9 <./code.PNG>]
+[9 <./pictures/code.PNG>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
  (week1.aux)
@@ -878,23 +873,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 338.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 338.
 Package rerunfilecheck Info: File `week1.out' has not changed.
 (rerunfilecheck)             Checksum: 38A774F8B589300C6E2EBB486E123D17;530.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 338.
  ) 
 Here is how much of TeX's memory you used:
- 16998 strings out of 492973
- 317939 string characters out of 3126249
- 389009 words of memory out of 3000000
- 20531 multiletter control sequences out of 15000+200000
+ 17005 strings out of 492973
+ 318508 string characters out of 3126249
+ 389369 words of memory out of 3000000
+ 20534 multiletter control sequences out of 15000+200000
  13882 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,54p,673b,485s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,8n,54p,674b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
  <d:\Users\ryahou\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \ectt1000.pk> <d:\Users\ryahou\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\ecbx1000.pk> <d:\Users\ryahou\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
@@ -912,9 +900,9 @@ al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/Users/ryaho
 u/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><d:
 /Users/ryahou/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb>
-Output written on week1.pdf (9 pages, 752395 bytes).
+Output written on week1.pdf (9 pages, 752839 bytes).
 PDF statistics:
- 444 PDF objects out of 1000 (max. 8388607)
+ 448 PDF objects out of 1000 (max. 8388607)
  48 named destinations out of 1000 (max. 500000)
  130 words of extra memory for PDF output out of 10000 (max. 10000000)
 
