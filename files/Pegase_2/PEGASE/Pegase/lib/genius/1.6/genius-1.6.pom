@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.cnes</groupId>
+	<artifactId>genius</artifactId>
+	<version>1.6</version>
+	<name>Genius</name>
+	<url>http://www.cnes.fr</url>
+	<description>Genius GUI library</description>
+
+    <!-- Dependencies Section -->
+    <dependencies>
+        <dependency>
+            <!-- This dependency is needed in order to allow compilation of custom taglets -->
+            <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
+            <version>1.6</version>
+            <scope>system</scope>
+            <systemPath>${env.JAVA_HOME}/lib/tools.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout-swing</artifactId>
+            <version>4.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.gettext-commons</groupId>
+            <artifactId>gettext-commons</artifactId>
+            <version>0.9.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.19</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+    </dependencies>
+
+	<!-- Set the encoding of the resources, etc to UTF-8 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<!-- Skip tests by default -->
+        <skipTests>true</skipTests>
+		
+	</properties>
+
+	<!-- Build plugins and goals Section -->
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>animal-sniffer-maven-plugin</artifactId>
+				<version>1.14</version>
+				<configuration>
+					<signature>
+						<groupId>org.codehaus.mojo.signature</groupId>
+						<artifactId>java16</artifactId>
+						<version>1.0</version>
+					</signature>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.1</version>
+				<configuration>
+					<!-- Set the custom taglets to be used in javadoc -->
+					<taglets>
+						<taglet>
+							<tagletClass>fr.cnes.genius.taglet.GDefaultConstraintsTaglet</tagletClass>
+							<tagletpath>${project.build.outputDirectory}</tagletpath>
+						</taglet>
+						<taglet>
+							<tagletClass>fr.cnes.genius.taglet.GNoteTaglet</tagletClass>
+							<tagletpath>${project.build.outputDirectory}</tagletpath>
+						</taglet>
+					</taglets>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+				<executions>
+				
+					<execution>
+						<id>copy-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<copyPom>true</copyPom>
+							<outputAbsoluteArtifactFilename>true</outputAbsoluteArtifactFilename>
+							<useRepositoryLayout>true</useRepositoryLayout>
+							<overWriteReleases>true</overWriteReleases>
+							<addParentPoms>true</addParentPoms>
+						</configuration>
+					</execution>
+					
+					<execution>
+						<id>copy-javadoc</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<classifier>javadoc</classifier>
+							<outputAbsoluteArtifactFilename>true</outputAbsoluteArtifactFilename>
+							<useRepositoryLayout>true</useRepositoryLayout>
+							<overWriteReleases>true</overWriteReleases>
+						</configuration>
+					</execution>
+					
+					<execution>
+						<id>copy-sources</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<classifier>sources</classifier>
+							<outputAbsoluteArtifactFilename>true</outputAbsoluteArtifactFilename>
+							<useRepositoryLayout>true</useRepositoryLayout>
+							<overWriteReleases>true</overWriteReleases>
+						</configuration>
+					</execution>
+										
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

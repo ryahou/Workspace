@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TJ>
+  <TabbedPane name="Data">
+    <Panel name="Stabilité">
+      <String name="Type_de_fusée">Minifusée</String>
+      <Real name="Masse" unit="g">3.5E3</Real>
+      <Real name="Centre_de_masse" unit="mm">6.9E2</Real>
+      <Real name="Longueur_totale" unit="mm">1.062E3</Real>
+      <String name="Moteur">Cariacou</String>
+      <Real name="Position" unit="mm">1.08E3</Real>
+      <String name="Ogive">Conique (droite)</String>
+      <Real name="Hauteur" unit="mm">2.7E2</Real>
+      <Real name="Diamètre" unit="mm">6.5E1</Real>
+      <String name="Ailerons">Mono-empennage</String>
+      <Real name="Emplanture" unit="mm">1.35E2</Real>
+      <Real name="Saumon" unit="mm">1.35E2</Real>
+      <Real name="Flèche" unit="mm">0.0E0</Real>
+      <Real name="Semi-envergure" unit="mm">3.2E1</Real>
+      <Real name="Epaisseur" unit="mm">2.0E0</Real>
+      <Integer name="Nombre">4</Integer>
+      <Real name="Position" unit="mm">1.06E3</Real>
+      <Real name="Diamètre" unit="mm">6.5E1</Real>
+      <String name="Transitions">Deux transitions</String>
+      <Real name="Longueur_'L'" unit="mm">2.1E1</Real>
+      <Real name="" unit="mm">2.0E1</Real>
+      <Real name="Diamètre_'D1'" unit="mm">6.5E1</Real>
+      <Real name="" unit="mm">5.2E1</Real>
+      <Real name="Diamètre_'D2'" unit="mm">5.2E1</Real>
+      <Real name="" unit="mm">6.5E1</Real>
+      <Real name="Implantation_'x'" unit="mm">4.105E2</Real>
+      <Real name="" unit="mm">6.815E2</Real>
+      <Boolean name="Résultats_intermédiaires">false</Boolean>
+    </Panel>
+    <Panel name="Trajectoire">
+      <Real name="Masse_totale" unit="g">3.72E3</Real>
+      <Real name="Surface_Réf." unit="mm^2">4.0E3</Real>
+      <Real name="Cx">5.0E-1</Real>
+      <Real name="Longueur" unit="mm">3.0E3</Real>
+      <Real name="Inclinaison">8.0E1</Real>
+      <Real name="Altitude" unit="mm">0.0E0</Real>
+      <Real name="Masse" unit="g">2.65E3</Real>
+      <Real name="Ouverture_para" unit="s">1.5901E1</Real>
+      <Real name="Surface_para" unit="mm^2">1.0E5</Real>
+      <Real name="Cx_parachute">1.0E0</Real>
+      <Real name="Vitesse_vent" unit="m/s">5.0E0</Real>
+    </Panel>
+  </TabbedPane>
+</TJ>
+

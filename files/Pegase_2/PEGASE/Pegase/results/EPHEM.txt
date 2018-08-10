@@ -1,0 +1,1 @@
+Elancement : 8.753846153846155 Gradient de portance : 25.125832190657754/rad MS Min : 2.111592861441896calibres MS Max : 2.8210288682095928calibres Couple Min : 53.05552789157991calibre/rad Couple Max : 70.8806979476354calibre/rad Abscisse du foyer de portance : 680.7788936010054mm Abscisse du centre de gravité moteur plein : 543.5253576072821mm 

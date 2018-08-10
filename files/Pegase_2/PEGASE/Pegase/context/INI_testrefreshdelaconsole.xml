@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TJ>
+  <TabbedPane name="Data">
+    <Panel name="Stabilité">
+      <String name="Type_de_fusée">Minifusée</String>
+      <Real name="Masse" unit="g">2.5E3</Real>
+      <Real name="Centre_de_masse" unit="mm">3.0E2</Real>
+      <Real name="Longueur_totale" unit="mm">1.062E3</Real>
+      <String name="Moteur">Cariacou</String>
+      <Real name="Position" unit="mm">1.08E3</Real>
+      <String name="Ogive">Conique (droite)</String>
+      <Real name="Hauteur" unit="mm">2.7E2</Real>
+      <Real name="Diamètre" unit="mm">6.5E1</Real>
+      <String name="Ailerons">Mono-empennage</String>
+      <Real name="Emplanture" unit="mm">1.35E2</Real>
+      <Real name="Saumon" unit="mm">1.35E2</Real>
+      <Real name="Flèche" unit="mm">0.0E0</Real>
+      <Real name="Envergure" unit="mm">1.5E2</Real>
+      <Real name="Epaisseur" unit="mm">2.0E0</Real>
+      <Integer name="Nombre">4</Integer>
+      <Real name="Position" unit="mm">1.06E3</Real>
+      <Real name="Diamètre" unit="mm">6.5E1</Real>
+      <String name="Transitions">Deux transitions</String>
+      <Real name="Longueur_'L'" unit="mm">2.1E1</Real>
+      <Real name="" unit="mm">2.0E1</Real>
+      <Real name="Diamètre_'D1'" unit="mm">6.5E1</Real>
+      <Real name="" unit="mm">5.2E1</Real>
+      <Real name="Diamètre_'D2'" unit="mm">5.2E1</Real>
+      <Real name="" unit="mm">6.5E1</Real>
+      <Real name="Implantation_'x'" unit="mm">4.105E2</Real>
+      <Real name="" unit="mm">6.815E2</Real>
+      <Boolean name="Résultats_intermédiaires">false</Boolean>
+    </Panel>
+  </TabbedPane>
+</TJ>
+
