@@ -2,150 +2,150 @@ package packageIHM;
 
 public class Fusee {
 	
-//~~~~~~~~~~~~~~~~	Données diverses	~~~~~~~~~~~~~~~~//
+///~~~~~~~~~~~~~~~~	Données diverses	~~~~~~~~~~~~~~~~//
 	protected int typeFusee = 3;
 
-//~~~~~~~~~~~~~~~~	Données d'entrée pour la stabilité	~~~~~~~~~~~~~~~~//
-	//fusée
-	protected double longTot = 1.062;		//Longueur totale de la fusée (m)
-	protected double xPropuRef = 1.08;		//Position du bas du propulseur (m)
-	//ogive;
-	protected double longOgive = 0.27;		//Hauteur de l'ogive (m)
-	protected double dOgive = 0.065;		//Diamètre de l'ogive (m)
-	protected int typeOgive = 3;			//0 s'il n'y a pas d'ogive, 1 pour parabolique, 2 pour ogivale et 3 pour conique
-	//jeu d'ailerons du bas;
-	protected double emplantureAil = 0.135;	//Emplanture d'un aileron (m)
-	protected double envergureAil = 0.090;	//Semi-envergure d'un aileron (m)
-	protected double saumonAil = 0.135;		//Saumon d'un aileron (m)
-	protected double flecheAil = 0;			//Flèche d'un aileron (m)
-	protected int nombreAil = 4;			//Nombre d'ailerons
-	protected double xAil = 1.06;			//Position du bas des ailerons (m)
-	//jeu d'ailerons du haut (plans canard)
-	protected double emplantureCan = 0.070;	//Emplanture d'un aileron (m)
-	protected double envergureCan = 0.032;	//Semi-envergure d'un aileron (m)
-	protected double saumonCan = 0.070;		//Saumon d'un aileron (m)
-	protected double flecheCan = 0;			//Flèche d'un aileron (m)
-	protected int nombreCan = 3;			//Nombre d'ailerons du bas
-	protected double xCan = 0.8;			//Position du bas des ailerons (m)
-	//partie masquée des ailerons du bas
-	protected double emplantureMasq = 0.135;//Emplanture d'un aileron (m) elle sera forcément égale à m_ail
-	protected double envergureMasq = 0.032;	//Envergure d'un aileron (m)
-	protected double saumonMasq = 0.135;	//Saumon d'un aileron (m)
-	protected double flecheMasq = 0;		//Flèche d'un aileron (m)
-	protected int nombreMasq = 0;			//Nombre d'ailerons du bas
-	protected double xMasq = 1.06;			//Position du bas des ailerons (m)
-	//transition A
-	protected double lA = 0.021;			//Longueur de la transition A (m)
-	protected double d1A = 0.065;			//Diamètre avant la transition A (m)
-	protected double d2A = 0.052;			//Diamètre après la transition A (m)
-	protected double xA = 0.4105;			//Position de la transition A (m)
-	//transition B
-	protected double lB = 0.02;				//Longueur de la transition B (m)
-	protected double d1B = 0.052;			//Diamètre avant la transition B (m)
-	protected double d2B = 0.065;			//Diamètre après la transition B (m)
-	protected double xB = 0.6815;			//Position de la transition B (m)
-	//position du CDG
-	protected double xCG = 0.69;			//Position du CdG de la fusée sans moteur (m)
-	protected double masseSansMoteur = 2.5;	//Masse de la fusée sans moteur (kg)
-	protected int etatMoteur = 0;			//0 si absent, 1 si vide et 2 si plein
-	//transitions et bi-empennages
-	protected int nombreTransitions = 2;	//Nombre de transitions (0, 1 ou 2)
-	protected int nombreJeuxAil = 1;		//Nombre de jeux d'ailerons : 0 par défaut, 1 pour mono-empennage, 2 pour bi-empennage 
-	//et 3 pour bi-empennage à demi-masqué
+///~~~~~~~~~~~~~~~~	Données d'entrée pour la stabilité	~~~~~~~~~~~~~~~~//
+	///fusée
+	protected double longTot = 1.062;		///Longueur totale de la fusée (m)
+	protected double xPropuRef = 1.08;		///Position du bas du propulseur (m)
+	///ogive;
+	protected double longOgive = 0.27;		///Hauteur de l'ogive (m)
+	protected double dOgive = 0.065;		///Diamètre de l'ogive (m)
+	protected int typeOgive = 3;			///0 s'il n'y a pas d'ogive, 1 pour parabolique, 2 pour ogivale et 3 pour conique
+	////jeu d'ailerons du bas;
+	protected double emplantureAil = 0.135;	///Emplanture d'un aileron (m)
+	protected double envergureAil = 0.090;	///Semi-envergure d'un aileron (m)
+	protected double saumonAil = 0.135;		///Saumon d'un aileron (m)
+	protected double flecheAil = 0;			///Flèche d'un aileron (m)
+	protected int nombreAil = 4;			///Nombre d'ailerons
+	protected double xAil = 1.06;			///Position du bas des ailerons (m)
+	///jeu d'ailerons du haut (plans canard)
+	protected double emplantureCan = 0.070;	///Emplanture d'un aileron (m)
+	protected double envergureCan = 0.032;	///Semi-envergure d'un aileron (m)
+	protected double saumonCan = 0.070;		///Saumon d'un aileron (m)
+	protected double flecheCan = 0;			///Flèche d'un aileron (m)
+	protected int nombreCan = 3;			///Nombre d'ailerons du bas
+	protected double xCan = 0.8;			///Position du bas des ailerons (m)
+	///partie masquée des ailerons du bas
+	protected double emplantureMasq = 0.135;///Emplanture d'un aileron (m) elle sera forcément égale à m_ail
+	protected double envergureMasq = 0.032;	///Envergure d'un aileron (m)
+	protected double saumonMasq = 0.135;	///Saumon d'un aileron (m)
+	protected double flecheMasq = 0;		///Flèche d'un aileron (m)
+	protected int nombreMasq = 0;			///Nombre d'ailerons du bas
+	protected double xMasq = 1.06;			///Position du bas des ailerons (m)
+	///transition A
+	protected double lA = 0.021;			///Longueur de la transition A (m)
+	protected double d1A = 0.065;			///Diamètre avant la transition A (m)
+	protected double d2A = 0.052;			///Diamètre après la transition A (m)
+	protected double xA = 0.4105;			///Position de la transition A (m)
+	///transition B
+	protected double lB = 0.02;				///Longueur de la transition B (m)
+	protected double d1B = 0.052;			///Diamètre avant la transition B (m)
+	protected double d2B = 0.065;			///Diamètre après la transition B (m)
+	protected double xB = 0.6815;			///Position de la transition B (m)
+	///position du CDG
+	protected double xCG = 0.69;			///Position du CdG de la fusée sans moteur (m)
+	protected double masseSansMoteur = 2.5;	///Masse de la fusée sans moteur (kg)
+	protected int etatMoteur = 0;			///0 si absent, 1 si vide et 2 si plein
+	///transitions et bi-empennages
+	protected int nombreTransitions = 2;	///Nombre de transitions (0, 1 ou 2)
+	protected int nombreJeuxAil = 1;		///Nombre de jeux d'ailerons : 0 par défaut, 1 pour mono-empennage, 2 pour bi-empennage 
+	///et 3 pour bi-empennage à demi-masqué
 	
-//~~~~~~~~~~~~~~~~	Calculs intermédiaires de stabilité	~~~~~~~~~~~~~~~~//
-	protected double cnO;				//portance de l'ogive (/rad)
-	protected double cnA;				//portance de la jupe (/rad)
-	protected double cnB;				//portance du rétreint (/rad)
-	protected double fAil;				//ligne de mi-corde des ailerons du bas (mm)
-	protected double cnAil;				//portance des ailerons du bas seuls (/rad)
-	protected double dRef;				//diamètre de référence (m)
-	protected double dAil = 0.065;		//diamètre de référence aux ailerons du bas (m)
-	protected double cnCan;				//portance des ailerons du haut seuls (/rad)
-	protected double dCan = 0;			//diamètre de référence aux ailerons du haut (m)
-	protected double fCan;				//ligne de mi-corde des ailerons du haut (mm)
-	protected double fMasq;				//ligne de mi-corde de la partie masquée des ailerons du bas (mm)
-	protected double cnMasq;			//portance de la partie masquée des ailerons du bas (/rad)
-	protected double cnAi;				//portance des ailerons du bas en 1/2 masqué (/rad)
-	protected double xCPAil;			//foyer de portance des ailerons du bas (mm)
-	protected double xCPMasq;			//foyer de portance de la partie masquée des ailerons du bas (mm)
-	protected double xCPCan;			//foyer de portance des ailerons du haut (mm)
-	protected double xCPTot;			//foyer de portance global des ailerons (mm)
-	protected double xCPTransitionA;	//foyer de portance de la jupe (mm)
-	protected double xCPTransitionB;	//foyer de portance du rétreint (mm)
-	protected double xCPOgive;			//foyer de portance de l'ogive (mm)
-	protected double xCPFusee = 0.679;	//foyer de portance global de la fusée (m)
+///~~~~~~~~~~~~~~~~	Calculs intermédiaires de stabilité	~~~~~~~~~~~~~~~~///
+	protected double cnO;				///portance de l'ogive (/rad)
+	protected double cnA;				///portance de la jupe (/rad)
+	protected double cnB;				///portance du rétreint (/rad)
+	protected double fAil;				///ligne de mi-corde des ailerons du bas (mm)
+	protected double cnAil;				///portance des ailerons du bas seuls (/rad)
+	protected double dRef;				///diamètre de référence (m)
+	protected double dAil = 0.065;		///diamètre de référence aux ailerons du bas (m)
+	protected double cnCan;				///portance des ailerons du haut seuls (/rad)
+	protected double dCan = 0;			///diamètre de référence aux ailerons du haut (m)
+	protected double fCan;				///ligne de mi-corde des ailerons du haut (mm)
+	protected double fMasq;				///ligne de mi-corde de la partie masquée des ailerons du bas (mm)
+	protected double cnMasq;			///portance de la partie masquée des ailerons du bas (/rad)
+	protected double cnAi;				///portance des ailerons du bas en 1/2 masqué (/rad)
+	protected double xCPAil;			///foyer de portance des ailerons du bas (mm)
+	protected double xCPMasq;			///foyer de portance de la partie masquée des ailerons du bas (mm)
+	protected double xCPCan;			///foyer de portance des ailerons du haut (mm)
+	protected double xCPTot;			///foyer de portance global des ailerons (mm)
+	protected double xCPTransitionA;	///foyer de portance de la jupe (mm)
+	protected double xCPTransitionB;	///foyer de portance du rétreint (mm)
+	protected double xCPOgive;			///foyer de portance de l'ogive (mm)
+	protected double xCPFusee = 0.679;	///foyer de portance global de la fusée (m)
 
-//~~~~~~~~~~~~~~~~	Sorties de calculs de stabilité ~~~~~~~~~~~~~~~~//
-	protected double cn = 0;			//Gradient de portance de la fusée (/rad)
-	protected double msMin = 0;			//Marge statique minimum (calibre)
-	protected double msMax = 0;			//Marge statique maximum (calibre)
-	protected double elancement = 0;	//Elancement de la fusée
-	protected double coupleMin = 0;		//Couple minimum
-	protected double coupleMax = 0;		//Couple maximum
+///~~~~~~~~~~~~~~~~	Sorties de calculs de stabilité ~~~~~~~~~~~~~~~~///
+	protected double cn = 0;			///Gradient de portance de la fusée (/rad)
+	protected double msMin = 0;			///Marge statique minimum (calibre)
+	protected double msMax = 0;			///Marge statique maximum (calibre)
+	protected double elancement = 0;	///Elancement de la fusée
+	protected double coupleMin = 0;		///Couple minimum
+	protected double coupleMax = 0;		///Couple maximum
 	
-	protected double massePlein = 2.72;	//Masse de la fusée propulseur plein (kg)
-	protected double masseVide = 2.65;	//Masse de la fusée propulseur vide (kg)
-	protected double xCGVide = 0.69;	//CdG de la fusée propulseur vide (m)
-	protected double xCGPlein = 0.7154;	//CdG de la fusée propulseur plein (m)
+	protected double massePlein = 2.72;	///Masse de la fusée propulseur plein (kg)
+	protected double masseVide = 2.65;	///Masse de la fusée propulseur vide (kg)
+	protected double xCGVide = 0.69;	///CdG de la fusée propulseur vide (m)
+	protected double xCGPlein = 0.7154;	///CdG de la fusée propulseur plein (m)
 		
-//~~~~~~~~~~~~~~~~	Caractéristiques moteurs ~~~~~~~~~~~~~~~~//
-	protected double xPropuVide = 0;		//CdG du moteur vide (en mm)
-	protected double xPropuPlein = 0;		//CdG du moteur plein (en mm)
-	protected String moteur = "Cariacou";	//nom du moteur
+///~~~~~~~~~~~~~~~~	Caractéristiques moteurs ~~~~~~~~~~~~~~~~///
+	protected double xPropuVide = 0;		///CdG du moteur vide (en mm)
+	protected double xPropuPlein = 0;		///CdG du moteur plein (en mm)
+	protected String moteur = "Cariacou";	///nom du moteur
 
-//~~~~~~~~~~	Données d'entrée pour la trajectographie	~~~~~~~~~~
-	//fusée
-	protected double cx = 0.5;				//coefficient de traînée de la fusée (sans unité)
-	protected double epAil = 0.002;			//Epaisseur d'un aileron (en m)
-	protected int alignement = 1;			//1 si les deux jeux d'ailerons sont alignés et 2 sinon
-	protected double epCan = 0;				//Epaisseur d'un aileron (en m)
-	//parachute(s)
-	protected double massePara = 2.65;		//masse sous parachute (en kg)
-	protected double nombreParachutes = 1;	//Nombre de parachute(s)
-	protected double vitVentPara = 10;		//vitesse du vent dans le plan horizontal (en m/s)
-	protected int choixDepotage = 4;		//choix du retard de dépotage (en s)
-//	protected double surfaceParaTotale = 0.2;//surface totale para 1 + 2 (en m²)
-	//parachute 1
-	protected double tPara1 = 7;			//instant de déclenchement du parachute (en s)
-	protected double cxPara1 = 1;			//coefficient de traînée du parachute (sans unité)
-	protected int choixPara1 = 1;			//0 pour un parachute croix, 1 pour un parachute circulaire, 
-											//2 pour utiliser la variable issue de l'IHM
-	protected double dim1Para1 = 0.225;		//dimension 1 du parachute 1 (en m)
-	protected double dim2Para1 = 0.050;		//dimension 2 du parachute 1 (en m)
-	protected double surfacePara1 = 0.1;	//surface du parachute 1 (en m²)
-	protected double vPara1 = 1;			//vitesse de desente sous le parachute 1 seul (en m/s)
-	//parachute 2
-	protected double tPara2 = 7;			//instant de déclenchement du parachute (en s)
-	protected double cxPara2 = 1;			//coefficient de traînée du parachute (sans unité)
-	protected int choixPara2 = 1;			//idem ci-dessus mais pour le second parachute
-	protected double dim1Para2 = 0.225;		//dimension 1 du parachute 2 (en m)
-	protected double dim2Para2 = 0.050;		//dimension 2 du parachute 2 (en m)
-	protected double surfacePara2 = 0.1;	//surface du parachute 2 (en m²)
-	protected double vPara2 = 1;			//vitesse de desente sous le parachute 2 seul (en m/s)
-	//rampe
-	protected double betaRampe = 80*Math.PI/180;//assiette de la rampe (en rad)
-	protected double altRampe = 0;			//altitude de la rampe (en m)
-	protected double lRampe = 3;			//longueur de la rampe (en m)
-	//Date d'allumage du moteur
-	protected double tIni = 0;				//temps (en s)
-	//autres variables d'initialisation
-	protected double accelX0 = 0;			//accélération initiale selon x (en m/s²)
-	protected double accelZ0 = 0;			//accélération initiale selon z (en m/s²)
-	protected double accelXZ0 = 0;			//accélération initiale selon XZ (en m/s²)
-	protected double vitesseX0 = 0;			//vitesse initiale selon X (en m/s)
-	protected double vitesseZ0 = 0;			//vitesse initiale selon Z (en m/s)
-	protected double vitesseXZ0 = 0;		//vitesse initiale selon XZ (en m/s)
-	protected double positionX0 = 0;		//position initiale selon X (en m)
-	protected double positionZ0 = 0;		//position initiale selon Z (en m)
-	protected double positionXZ0 = 0;		//position initiale selon XZ (en m)
-	protected double poussee0 = 0;			//poussée initiale (en N)
-	protected double debit0 = 0;			//débit initial (en kg/s)
+///~~~~~~~~~~	Données d'entrée pour la trajectographie	~~~~~~~~~~
+	///fusée
+	protected double cx = 0.5;				///coefficient de traînée de la fusée (sans unité)
+	protected double epAil = 0.002;			///Epaisseur d'un aileron (en m)
+	protected int alignement = 1;			///1 si les deux jeux d'ailerons sont alignés et 2 sinon
+	protected double epCan = 0;				///Epaisseur d'un aileron (en m)
+	///parachute(s)
+	protected double massePara = 2.65;		///masse sous parachute (en kg)
+	protected double nombreParachutes = 1;	///Nombre de parachute(s)
+	protected double vitVentPara = 10;		///vitesse du vent dans le plan horizontal (en m/s)
+	protected int choixDepotage = 4;		///choix du retard de dépotage (en s)
+///	protected double surfaceParaTotale = 0.2;///surface totale para 1 + 2 (en m²)
+	///parachute 1
+	protected double tPara1 = 7;			///instant de déclenchement du parachute (en s)
+	protected double cxPara1 = 1;			///coefficient de traînée du parachute (sans unité)
+	protected int choixPara1 = 1;			///0 pour un parachute croix, 1 pour un parachute circulaire, 
+											///2 pour utiliser la variable issue de l'IHM
+	protected double dim1Para1 = 0.225;		///dimension 1 du parachute 1 (en m)
+	protected double dim2Para1 = 0.050;		///dimension 2 du parachute 1 (en m)
+	protected double surfacePara1 = 0.1;	///surface du parachute 1 (en m²)
+	protected double vPara1 = 1;			///vitesse de desente sous le parachute 1 seul (en m/s)
+	///parachute 2
+	protected double tPara2 = 7;			///instant de déclenchement du parachute (en s)
+	protected double cxPara2 = 1;			///coefficient de traînée du parachute (sans unité)
+	protected int choixPara2 = 1;			///idem ci-dessus mais pour le second parachute
+	protected double dim1Para2 = 0.225;		///dimension 1 du parachute 2 (en m)
+	protected double dim2Para2 = 0.050;		///dimension 2 du parachute 2 (en m)
+	protected double surfacePara2 = 0.1;	///surface du parachute 2 (en m²)
+	protected double vPara2 = 1;			///vitesse de desente sous le parachute 2 seul (en m/s)
+	///rampe
+	protected double betaRampe = 80*Math.PI/180;///assiette de la rampe (en rad)
+	protected double altRampe = 0;			///altitude de la rampe (en m)
+	protected double lRampe = 3;			///longueur de la rampe (en m)
+	///Date d'allumage du moteur
+	protected double tIni = 0;				///temps (en s)
+	///autres variables d'initialisation
+	protected double accelX0 = 0;			///accélération initiale selon x (en m/s²)
+	protected double accelZ0 = 0;			///accélération initiale selon z (en m/s²)
+	protected double accelXZ0 = 0;			///accélération initiale selon XZ (en m/s²)
+	protected double vitesseX0 = 0;			///vitesse initiale selon X (en m/s)
+	protected double vitesseZ0 = 0;			///vitesse initiale selon Z (en m/s)
+	protected double vitesseXZ0 = 0;		///vitesse initiale selon XZ (en m/s)
+	protected double positionX0 = 0;		///position initiale selon X (en m)
+	protected double positionZ0 = 0;		///position initiale selon Z (en m)
+	protected double positionXZ0 = 0;		///position initiale selon XZ (en m)
+	protected double poussee0 = 0;			///poussée initiale (en N)
+	protected double debit0 = 0;			///débit initial (en kg/s)
 	
-//~~~~~~~~~~	Résultats intermédiaires pour la trajectographie	~~~~~~~~~~
-	protected double sRefTrainee;			//surface de référence pour le calcul de la traînée (en m²)
-	protected double vPara = 1;				//vitesse de desente sous parachute (en m/s)
-	// Séries de valeurs pour tracer les trajectoires
+///~~~~~~~~~~	Résultats intermédiaires pour la trajectographie	~~~~~~~~~~
+	protected double sRefTrainee;			///surface de référence pour le calcul de la traînée (en m²)
+	protected double vPara = 1;				///vitesse de desente sous parachute (en m/s)
+	/// Séries de valeurs pour tracer les trajectoires
 	public double[] xPortee = new double [100000];
 	public double[] zAltitude = new double [100000];
 	public double[] xPorteePara = new double [2];
@@ -153,37 +153,37 @@ public class Fusee {
 	public double[] xTemps = new double [100000];
 	public double[] xTempsPara = new double [2];
 	
-//~~~~~~~~~~	Sorties de calculs de la trajectographie	~~~~~~~~~~
-	//Attributs des événements du vol
-	//accélération max
-	protected double accelerationMaximale = 0;	//accélération maximale (en m/s²)
-	protected double dateAccelerationMaximale = 0;//instant de l'accélération max (en s)
-	//sortie de rampe
-	protected double vitesseSortieRampe = 0;	//vitesse en sortie de rampe (en m)
-	//vitesse max
-	protected double vitesseMax = 0;			//vitesse maximale (en m/s)
-	protected double dateVitesseMaximale = 0;	//instant de la vitesse max (en s)
-	protected double machMax = 0;				//nombre de Mach maximum (sans unités)
-	//fin de poussée
-	protected double tempsFinProp = 0;			//date de la fin de propu (en s)
-	//culmination
-	protected double altitudeCulmination = 0;	//altitude de la culmination (en m)
-	protected double tempsCulmination = 0;		//date de la culmination (en s)
-	protected double vitesseCulmination = 0;	//vitesse de la culmination (en m/s)
-	//impact balistique
-	protected double porteeBalistique = 0;		//portée balistique (en m)
-	protected double tBalistique = 0;			//durée totale du vol en balistique (en s)
-	//descente sous parachute
-	protected double dureeVolSousPara = 0;		//durée de la descente sous parachute (en s)
-	protected double altPara = 0;				//altitude de déclenchement du parachute (en m)
-	protected double x0Para = 0;				//portée de déclenchement du parachute (en m)
-	protected double dVol1 = 0;					//durée du vol sous le seul parachute 1 (en s)
-	protected double dVol2 = 0;					//durée du vol sous le seul parachute 2 (en s)
-	protected double dVolPara = 0;				//durée du vol sous les deux parachutes (en s)
-	protected double altParaBis = 0;			//altitude de déclenchement de l'autre parachute (en m)
-	protected double deportLateral = 0;			//déport latéral sous parachute dû au vent (en m)
-	//fin du vol
-	protected double dureeVol = 0;				//durée totale du vol (en s)
+///~~~~~~~~~~	Sorties de calculs de la trajectographie	~~~~~~~~~~
+	///Attributs des événements du vol
+	///accélération max
+	protected double accelerationMaximale = 0;	///accélération maximale (en m/s²)
+	protected double dateAccelerationMaximale = 0;///instant de l'accélération max (en s)
+	///sortie de rampe
+	protected double vitesseSortieRampe = 0;	///vitesse en sortie de rampe (en m)
+	///vitesse max
+	protected double vitesseMax = 0;			///vitesse maximale (en m/s)
+	protected double dateVitesseMaximale = 0;	///instant de la vitesse max (en s)
+	protected double machMax = 0;				///nombre de Mach maximum (sans unités)
+	///fin de poussée
+	protected double tempsFinProp = 0;			///date de la fin de propu (en s)
+	///culmination
+	protected double altitudeCulmination = 0;	///altitude de la culmination (en m)
+	protected double tempsCulmination = 0;		///date de la culmination (en s)
+	protected double vitesseCulmination = 0;	///vitesse de la culmination (en m/s)
+	///impact balistique
+	protected double porteeBalistique = 0;		///portée balistique (en m)
+	protected double tBalistique = 0;			///durée totale du vol en balistique (en s)
+	///descente sous parachute
+	protected double dureeVolSousPara = 0;		///durée de la descente sous parachute (en s)
+	protected double altPara = 0;				///altitude de déclenchement du parachute (en m)
+	protected double x0Para = 0;				///portée de déclenchement du parachute (en m)
+	protected double dVol1 = 0;					///durée du vol sous le seul parachute 1 (en s)
+	protected double dVol2 = 0;					///durée du vol sous le seul parachute 2 (en s)
+	protected double dVolPara = 0;				///durée du vol sous les deux parachutes (en s)
+	protected double altParaBis = 0;			///altitude de déclenchement de l'autre parachute (en m)
+	protected double deportLateral = 0;			///déport latéral sous parachute dû au vent (en m)
+	///fin du vol
+	protected double dureeVol = 0;				///durée totale du vol (en s)
 		
 	/**
 	 * Setters of the entry data for the stability considerations
@@ -302,8 +302,8 @@ public class Fusee {
 		this.dim1Para2 = pDim1Para2;	}
 	public void setDim2Para2(double pDim2Para2)	{
 		this.dim2Para2 = pDim2Para2;	}
-//	public void setSurfacePara(double pSurfPara)	{
-//		this.surfaceParaTotale = pSurfPara;	}
+///	public void setSurfacePara(double pSurfPara)	{
+///		this.surfaceParaTotale = pSurfPara;	}
 	public void setSurfacePara1(double pSurfPara1)	{
 		this.surfacePara1 = pSurfPara1;	}
 	public void setSurfacePara2(double pSurfPara1)	{

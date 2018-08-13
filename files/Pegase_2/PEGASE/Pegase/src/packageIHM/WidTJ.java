@@ -13,7 +13,7 @@ import fr.cnes.genius.utils.GFileFilter;
 
 public class WidTJ extends GMainFrameAbstract<WidTJDataPanel> {
 	
-    // File Names
+    /// File Names
     /** Prefix for context file names */
     private static final String INI_FILE_PREFIX = "INI_";
     /** By default context file names */
@@ -23,7 +23,7 @@ public class WidTJ extends GMainFrameAbstract<WidTJDataPanel> {
     /** By default EPHEM file names */
     private static final String EPH_FILE = "EPHEM.txt";
  
-    // SIZES
+    /// SIZES
     /** Data panel height is determined through a method*/
     /** Error console height */
     private static final int ERRCONSOLE_HEIGHT = 80;
@@ -79,13 +79,13 @@ public class WidTJ extends GMainFrameAbstract<WidTJDataPanel> {
     @Override
     protected void customPreProcessManagement() throws GFileManipulatorException {
 
-    	// We write a context file with data coming from the data panel
+    	/// We write a context file with data coming from the data panel
     	GFileManipulation.writeConfig("data/"+INI_FILE, "TJ", this.getDataPanel(), true);
-    	// We initialize the JavaCommandLauncher
+    	/// We initialize the JavaCommandLauncher
     	final String classPath = System.getProperty("java.class.path");
-    	this.getJavaCommandLauncher().setJavaCommand(classPath, new String[] {"BatchTJ"});//il faut désigner la méthode principale du package de calculs
-       	// We display the console above the other tabbedpanes
-//    	this.getDataPanel().selectConsoleTab();
+    	this.getJavaCommandLauncher().setJavaCommand(classPath, new String[] {"BatchTJ"});///il faut désigner la méthode principale du package de calculs
+       	/// We display the console above the other tabbedpanes
+///    	this.getDataPanel().selectConsoleTab();
  
     }
  
@@ -94,7 +94,7 @@ public class WidTJ extends GMainFrameAbstract<WidTJDataPanel> {
      */
     @Override
     protected void customPostProcessManagement() {
-     	// Nothing to do ...
+     	/// Nothing to do ...
     }
     
     /**
@@ -107,8 +107,8 @@ public class WidTJ extends GMainFrameAbstract<WidTJDataPanel> {
 	/**
      * Commented method getting the screen width (will throw an exception on a computer using more than one screen).
      */
-//    public static int GetScreenWorkingWidth() {
-//	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
-//	}
+///    public static int GetScreenWorkingWidth() {
+///	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
+///	}
  
 }

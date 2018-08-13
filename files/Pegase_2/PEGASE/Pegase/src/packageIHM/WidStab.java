@@ -26,8 +26,8 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 	 * changée par l'utilisateur.
 	 */
 
-	// private int numColTop = 6;
-	// private GLabel[] colTop = new GLabel[numColTop];
+	/// private int numColTop = 6;
+	/// private GLabel[] colTop = new GLabel[numColTop];
 
 	private GComboBoxWithLabel menuFusees = new GComboBoxWithLabel("Type de fusée", IHMPrincipale.fusee1.typeFusee, "Fusée à eau", 
 			"Microfusée", "Rocketry Challenge", "Minifusée", "Fusée expérimentale", "Bi-étage");
@@ -71,13 +71,13 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 	private GLabel labEmpennage1 = new GLabel("Empennage bas");
 	private GLabel labEmpennage2 = new GLabel("Empennage haut");
 	private GEntryReal boxEmplanture1 = new GEntryReal("Emplanture", IHMPrincipale.fusee1.emplantureAil, IHMPrincipale.unitLongueur);
-	// à mettre quand la souris passe sur la case : 'm'
+	/// à mettre quand la souris passe sur la case : 'm'
 	private GEntryReal boxEmplanture2 = new GEntryReal("", IHMPrincipale.fusee1.emplantureCan, IHMPrincipale.unitLongueur);
-	private GEntryReal boxSaumon1 = new GEntryReal("Saumon", IHMPrincipale.fusee1.saumonAil, IHMPrincipale.unitLongueur); // 'n'
+	private GEntryReal boxSaumon1 = new GEntryReal("Saumon", IHMPrincipale.fusee1.saumonAil, IHMPrincipale.unitLongueur); /// 'n'
 	private GEntryReal boxSaumon2 = new GEntryReal("", IHMPrincipale.fusee1.saumonCan, IHMPrincipale.unitLongueur);
-	private GEntryReal boxFleche1 = new GEntryReal("Flèche", IHMPrincipale.fusee1.flecheAil, IHMPrincipale.unitLongueur); // 'p'
+	private GEntryReal boxFleche1 = new GEntryReal("Flèche", IHMPrincipale.fusee1.flecheAil, IHMPrincipale.unitLongueur); /// 'p'
 	private GEntryReal boxFleche2 = new GEntryReal("", IHMPrincipale.fusee1.flecheCan, IHMPrincipale.unitLongueur);
-	private GEntryReal boxEnvergure1 = new GEntryReal("Semi-envergure", IHMPrincipale.fusee1.envergureAil, IHMPrincipale.unitLongueur);//'E'
+	private GEntryReal boxEnvergure1 = new GEntryReal("Semi-envergure", IHMPrincipale.fusee1.envergureAil, IHMPrincipale.unitLongueur);///'E'
 	private GEntryReal boxEnvergure2 = new GEntryReal("", IHMPrincipale.fusee1.envergureCan, IHMPrincipale.unitLongueur);
 	private GEntryReal boxEpaisseur1 = new GEntryReal("Epaisseur", IHMPrincipale.fusee1.epAil, IHMPrincipale.unitLongueur);
 	private GEntryReal boxEpaisseur2 = new GEntryReal("", IHMPrincipale.fusee1.epCan, IHMPrincipale.unitLongueur);
@@ -101,9 +101,9 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 	private GEntryReal boxImplantationXA = new GEntryReal("Implantation 'x'", IHMPrincipale.fusee1.xA, IHMPrincipale.unitLongueur);
 	private GEntryReal boxImplantationXB = new GEntryReal("", IHMPrincipale.fusee1.xB, IHMPrincipale.unitLongueur);
 
-	// sert également à afficher les résultats de l'ensemble étage 1 + 2 en bi-étage
-//	private GLabel sousTitreResultatEtage1 = new GLabel("Résultats étage 1");
-//	private GLabel sousTitreResultatEtage2 = new GLabel("Résultats étage 2");
+	/// sert également à afficher les résultats de l'ensemble étage 1 + 2 en bi-étage
+///	private GLabel sousTitreResultatEtage1 = new GLabel("Résultats étage 1");
+///	private GLabel sousTitreResultatEtage2 = new GLabel("Résultats étage 2");
 
 	private GCheckBox niveauDetail = new GCheckBox("Résultats intermédiaires");
 
@@ -118,195 +118,195 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 
 	GFreeChartXY diagrammeStabilite = new GFreeChartXY("", "Marge statique MS", "Portance Cnalpha", null, false);
 
-	// séries de valeurs pour le diagramme de stabilité
-	// à remplacer par des méthodes plus propres, notamment le couple
-	// gradient de portance
+	/// séries de valeurs pour le diagramme de stabilité
+	/// à remplacer par des méthodes plus propres, notamment le couple
+	/// gradient de portance
 	private double[] xCnAlpha = { 0, 1, 2, 3, 4, 5, 6, 7 };
 	private double[] yCnAlphaMin = { Stab.critCnMinMiniF, Stab.critCnMinMiniF, Stab.critCnMinMiniF, 
 			Stab.critCnMinMiniF, Stab.critCnMinMiniF, Stab.critCnMinMiniF, Stab.critCnMinMiniF, Stab.critCnMinMiniF };
 	private double[] yCnAlphaMax = { Stab.critCnMaxMiniF, Stab.critCnMaxMiniF, Stab.critCnMaxMiniF, 
 			Stab.critCnMaxMiniF, Stab.critCnMaxMiniF, Stab.critCnMaxMiniF, Stab.critCnMaxMiniF, Stab.critCnMaxMiniF };
-	// marge statique
+	/// marge statique
 	private double[] xMSMin = { Stab.critMSMinMiniF, Stab.critMSMinMiniF, Stab.critMSMinMiniF, Stab.critMSMinMiniF, 
 			Stab.critMSMinMiniF, Stab.critMSMinMiniF, Stab.critMSMinMiniF, Stab.critMSMinMiniF };
 	private double[] xMSMax = { Stab.critMSMaxMiniF, Stab.critMSMaxMiniF, Stab.critMSMaxMiniF, Stab.critMSMaxMiniF, 
 			Stab.critMSMaxMiniF, Stab.critMSMaxMiniF, Stab.critMSMaxMiniF, Stab.critMSMaxMiniF };
 	private double[] yMS = { 0, 10, 20, 30, 40, 50, 60, 70 };
-	// couple MS*Cnalpha
+	/// couple MS*Cnalpha
 	private double[] xCoupleMin = { 0, 0.5, 1, 2, 3, 4, 5, 6, 7 };
 	private double[] yCoupleMin = { 60, 40, 15, 7.5, 5, 3.75, 3, 2.5, 2.143 };
 	private double[] xCoupleMax = { 2, 3, 4, 5, 6, 7, 8, 9 };
 	private double[] yCoupleMax = { 50, 33.33, 25, 20, 16.67, 14.29, 12.5, 11.11 };
-	// accesseurs des valeurs de l'objet fusee (les deux tableaux doivent avoir le même nombre de points)
+	/// accesseurs des valeurs de l'objet fusee (les deux tableaux doivent avoir le même nombre de points)
 	private double[] xFusee = { IHMPrincipale.fusee1.getMSMin(), IHMPrincipale.fusee1.getMSMax() };
 	private double[] yFusee = { IHMPrincipale.fusee1.getPortanceFusee(), IHMPrincipale.fusee1.getPortanceFusee() };
 	
-	// Objet schéma de la fusée et séries de valeurs nécessaires au tracé de la fusée
+	/// Objet schéma de la fusée et séries de valeurs nécessaires au tracé de la fusée
 	GFreeChartXY schemaFusee = new GFreeChartXY("", "", "", null, false);
-	// Séries de valeurs pour l'ogive
-	// N.B. pour l'instant quelle que soit le type d'ogive sélectionnée,
-	// elles ont toutes le même profil :-(
+	/// Séries de valeurs pour l'ogive
+	/// N.B. pour l'instant quelle que soit le type d'ogive sélectionnée,
+	/// elles ont toutes le même profil :-(
 	private double[] xOgive1 = { -IHMPrincipale.fusee1.dOgive/2, 0, IHMPrincipale.fusee1.dOgive/2 };
 	private double[] yOgive1 = { -IHMPrincipale.fusee1.longOgive, 0, -IHMPrincipale.fusee1.longOgive };
-	private double repereYOgive = 0;	//données fantôme utilisée pour recaler le tracé lorsqu'il n'y a pas d'ogive
-	// Séries de valeurs pour les ailerons
-	// rayon au niveau des ailerons
+	private double repereYOgive = 0;	///données fantôme utilisée pour recaler le tracé lorsqu'il n'y a pas d'ogive
+	/// Séries de valeurs pour les ailerons
+	/// rayon au niveau des ailerons
 	private double[] Ail_gauche_x_emplanture = { -IHMPrincipale.fusee1.dAil/2, -IHMPrincipale.fusee1.dAil/2 };
-	// position du bas - emplanture, position du bas
+	/// position du bas - emplanture, position du bas
 	private double[] Ail_gauche_y_emplanture = { -IHMPrincipale.fusee1.xAil+IHMPrincipale.fusee1.emplantureAil, 
 			-IHMPrincipale.fusee1.xAil };
-	// rayon au niveau des ailerons + semi-envergure
+	/// rayon au niveau des ailerons + semi-envergure
 	private double[] Ail_gauche_x_saumon = { -IHMPrincipale.fusee1.dAil/2-IHMPrincipale.fusee1.envergureAil, 
 			-IHMPrincipale.fusee1.dAil/2-IHMPrincipale.fusee1.envergureAil };
-	// position du bas - emplanture, position du bas
+	/// position du bas - emplanture, position du bas
 	private double[] Ail_gauche_y_saumon = { -IHMPrincipale.fusee1.xAil+IHMPrincipale.fusee1.emplantureAil, -IHMPrincipale.fusee1.xAil };
-	// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
+	/// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
 	private double[] Ail_gauche_x_BA = { -IHMPrincipale.fusee1.dAil/2-IHMPrincipale.fusee1.envergureAil, -IHMPrincipale.fusee1.dAil/2 };
-	// position du bas - emplanture
+	/// position du bas - emplanture
 	private double[] Ail_gauche_y_BA = { -IHMPrincipale.fusee1.xAil+IHMPrincipale.fusee1.emplantureAil, 
 			-IHMPrincipale.fusee1.xAil+IHMPrincipale.fusee1.emplantureAil };
-	// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
+	/// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
 	private double[] Ail_gauche_x_BF = { -IHMPrincipale.fusee1.dAil/2-IHMPrincipale.fusee1.envergureAil, -IHMPrincipale.fusee1.dAil/2 };
-	// position du bas
+	/// position du bas
 	private double[] Ail_gauche_y_BF = { -IHMPrincipale.fusee1.xAil, -IHMPrincipale.fusee1.xAil };
-	// rayon au niveau des ailerons
+	/// rayon au niveau des ailerons
 	private double[] Ail_droite_x_emplanture = { IHMPrincipale.fusee1.dAil/2, IHMPrincipale.fusee1.dAil/2 };
-	// position du bas - emplanture, position du bas
+	/// position du bas - emplanture, position du bas
 	private double[] Ail_droite_y_emplanture = { -IHMPrincipale.fusee1.xAil+IHMPrincipale.fusee1.emplantureAil, 
 			-IHMPrincipale.fusee1.xAil };
-	// rayon au niveau des ailerons + semi-envergure
+	/// rayon au niveau des ailerons + semi-envergure
 	private double[] Ail_droite_x_saumon = { IHMPrincipale.fusee1.dAil/2+IHMPrincipale.fusee1.envergureAil, 
 			IHMPrincipale.fusee1.dAil/2+IHMPrincipale.fusee1.envergureAil };
-	// position du bas - emplanture, position du bas
+	/// position du bas - emplanture, position du bas
 	private double[] Ail_droite_y_saumon = { -IHMPrincipale.fusee1.xAil+IHMPrincipale.fusee1.emplantureAil, -IHMPrincipale.fusee1.xAil };
-	// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
+	/// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
 	private double[] Ail_droite_x_BA = { IHMPrincipale.fusee1.dAil/2+IHMPrincipale.fusee1.envergureAil, IHMPrincipale.fusee1.dAil/2 };
-	// position du bas - emplanture
+	/// position du bas - emplanture
 	private double[] Ail_droite_y_BA = { -IHMPrincipale.fusee1.xAil+IHMPrincipale.fusee1.emplantureAil, 
 			-IHMPrincipale.fusee1.xAil+IHMPrincipale.fusee1.emplantureAil };
-	// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
+	/// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
 	private double[] Ail_droite_x_BF = { IHMPrincipale.fusee1.dAil/2+IHMPrincipale.fusee1.envergureAil, IHMPrincipale.fusee1.dAil/2 };
-	// position du bas
+	/// position du bas
 	private double[] Ail_droite_y_BF = { -IHMPrincipale.fusee1.xAil, -IHMPrincipale.fusee1.xAil };
 	
-	// Séries de valeurs pour les canards
-	// rayon au niveau des canards
+	/// Séries de valeurs pour les canards
+	/// rayon au niveau des canards
 	private double[] Can_gauche_x_emplanture = { -IHMPrincipale.fusee1.dCan/2, -IHMPrincipale.fusee1.dCan/2 };
-	// position du bas - emplanture, position du bas
+	/// position du bas - emplanture, position du bas
 	private double[] Can_gauche_y_emplanture = { -IHMPrincipale.fusee1.xCan+IHMPrincipale.fusee1.emplantureCan, 
 			-IHMPrincipale.fusee1.xCan };
-	// rayon au niveau des canards + semi-envergure
+	/// rayon au niveau des canards + semi-envergure
 	private double[] Can_gauche_x_saumon = { -IHMPrincipale.fusee1.dCan/2-IHMPrincipale.fusee1.envergureCan, 
 			-IHMPrincipale.fusee1.dCan/2-IHMPrincipale.fusee1.envergureCan };
-	// position du bas - emplanture, position du bas
+	/// position du bas - emplanture, position du bas
 	private double[] Can_gauche_y_saumon = { -IHMPrincipale.fusee1.xCan+IHMPrincipale.fusee1.emplantureCan, -IHMPrincipale.fusee1.xCan };
-	// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
+	/// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
 	private double[] Can_gauche_x_BA = { -IHMPrincipale.fusee1.dCan/2-IHMPrincipale.fusee1.envergureCan, -IHMPrincipale.fusee1.dCan/2 };
-	// position du bas - emplanture
+	/// position du bas - emplanture
 	private double[] Can_gauche_y_BA = { -IHMPrincipale.fusee1.xCan+IHMPrincipale.fusee1.emplantureCan, 
 			-IHMPrincipale.fusee1.xCan+IHMPrincipale.fusee1.emplantureCan };
-	// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
+	/// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
 	private double[] Can_gauche_x_BF = { -IHMPrincipale.fusee1.dCan/2-IHMPrincipale.fusee1.envergureCan, -IHMPrincipale.fusee1.dCan/2 };
-	// position du bas
+	/// position du bas
 	private double[] Can_gauche_y_BF = { -IHMPrincipale.fusee1.xCan, -IHMPrincipale.fusee1.xCan };
-	// rayon au niveau des canards
+	/// rayon au niveau des canards
 	private double[] Can_droite_x_emplanture = { IHMPrincipale.fusee1.dCan/2, IHMPrincipale.fusee1.dCan/2 };
-	// position du bas - emplanture, position du bas
+	/// position du bas - emplanture, position du bas
 	private double[] Can_droite_y_emplanture = { -IHMPrincipale.fusee1.xCan+IHMPrincipale.fusee1.emplantureCan, 
 			-IHMPrincipale.fusee1.xCan };
-	// rayon au niveau des canards + semi-envergure
+	/// rayon au niveau des canards + semi-envergure
 	private double[] Can_droite_x_saumon = { IHMPrincipale.fusee1.dCan/2+IHMPrincipale.fusee1.envergureCan, 
 			IHMPrincipale.fusee1.dCan/2+IHMPrincipale.fusee1.envergureCan };
-	// position du bas - emplanture, position du bas
+	/// position du bas - emplanture, position du bas
 	private double[] Can_droite_y_saumon = { -IHMPrincipale.fusee1.xCan+IHMPrincipale.fusee1.emplantureCan, -IHMPrincipale.fusee1.xCan };
-	// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
+	/// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
 	private double[] Can_droite_x_BA = { IHMPrincipale.fusee1.dCan/2+IHMPrincipale.fusee1.envergureCan, IHMPrincipale.fusee1.dCan/2 };
-	// position du bas - emplanture
+	/// position du bas - emplanture
 	private double[] Can_droite_y_BA = { -IHMPrincipale.fusee1.xCan+IHMPrincipale.fusee1.emplantureCan, 
 			-IHMPrincipale.fusee1.xCan+IHMPrincipale.fusee1.emplantureCan };
-	// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
+	/// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
 	private double[] Can_droite_x_BF = { IHMPrincipale.fusee1.dCan/2+IHMPrincipale.fusee1.envergureCan, IHMPrincipale.fusee1.dCan/2 };
-	// position du bas
+	/// position du bas
 	private double[] Can_droite_y_BF = { -IHMPrincipale.fusee1.xCan, -IHMPrincipale.fusee1.xCan };
 	
-	// Séries de valeurs pour la transition A
-	// D2A/2, D1A/2
+	/// Séries de valeurs pour la transition A
+	/// D2A/2, D1A/2
 	private double[] TransitionA_x_gauche = { -IHMPrincipale.fusee1.d2A/2, -IHMPrincipale.fusee1.d1A/2 };
-	// implantation + longueur de la transition, implantation
+	/// implantation + longueur de la transition, implantation
 	private double[] TransitionA_y_gauche = { -IHMPrincipale.fusee1.xA-IHMPrincipale.fusee1.lA, -IHMPrincipale.fusee1.xA };
-	// D2A/2, D1A/2
+	/// D2A/2, D1A/2
 	private double[] TransitionA_x_droite = { IHMPrincipale.fusee1.d2A/2, IHMPrincipale.fusee1.d1A/2 };
-	// implantation + longueur de la transition, implantation
+	/// implantation + longueur de la transition, implantation
 	private double[] TransitionA_y_droite = { -IHMPrincipale.fusee1.xA-IHMPrincipale.fusee1.lA, -IHMPrincipale.fusee1.xA };
-	// Séries de valeurs pour la transition B
-	// D2B/2, D1B/2
+	/// Séries de valeurs pour la transition B
+	/// D2B/2, D1B/2
 	private double[] TransitionB_x_gauche = { -IHMPrincipale.fusee1.d2B/2, -IHMPrincipale.fusee1.d1B/2 };
-	// implantation + longueur de la transition, implantation
+	/// implantation + longueur de la transition, implantation
 	private double[] TransitionB_y_gauche = { -IHMPrincipale.fusee1.xB-IHMPrincipale.fusee1.lB, -IHMPrincipale.fusee1.xB };
-	// D2B/2, D1B/2
+	/// D2B/2, D1B/2
 	private double[] TransitionB_x_droite = { IHMPrincipale.fusee1.d2B/2, IHMPrincipale.fusee1.d1B/2 };
-	// implantation + longueur de la transition, implantation
+	/// implantation + longueur de la transition, implantation
 	private double[] TransitionB_y_droite = { -IHMPrincipale.fusee1.xB-IHMPrincipale.fusee1.lB, -IHMPrincipale.fusee1.xB };
-	// Séries de valeurs pour le premier tube
-	// rayon ogive, rayon ogive
+	/// Séries de valeurs pour le premier tube
+	/// rayon ogive, rayon ogive
 	private double[] xTube1_gauche = { -IHMPrincipale.fusee1.dOgive/2, -IHMPrincipale.fusee1.dOgive/2 };
-	// longueur ogive, longueur ogive + implantation transition A - longueur transition A
+	/// longueur ogive, longueur ogive + implantation transition A - longueur transition A
 	private double[] yTube1_gauche = { -IHMPrincipale.fusee1.longOgive, -IHMPrincipale.fusee1.xA };
-	// rayon ogive, rayon ogive
+	/// rayon ogive, rayon ogive
 	private double[] xTube1_droite = { IHMPrincipale.fusee1.dOgive/2, IHMPrincipale.fusee1.dOgive/2 };
-	// longueur ogive, longueur ogive + implantation transition A - longueur transition A
+	/// longueur ogive, longueur ogive + implantation transition A - longueur transition A
 	private double[] yTube1_droite = { -IHMPrincipale.fusee1.longOgive, -IHMPrincipale.fusee1.xA };
-	// Séries de valeurs pour le deuxième tube
-	// d2A/2, d2A/2
+	/// Séries de valeurs pour le deuxième tube
+	/// d2A/2, d2A/2
 	private double[] xTube2_gauche = { -IHMPrincipale.fusee1.d2A/2, -IHMPrincipale.fusee1.d2A/2 };
-	// implantation transition A + longueur transition, implantation transition B
+	/// implantation transition A + longueur transition, implantation transition B
 	private double[] yTube2_gauche = { -IHMPrincipale.fusee1.xA-IHMPrincipale.fusee1.lA, -IHMPrincipale.fusee1.xB };
-	// d2A/2, d2A/2
+	/// d2A/2, d2A/2
 	private double[] xTube2_droite = { IHMPrincipale.fusee1.d2A/2, IHMPrincipale.fusee1.d2A/2 };
-	// implantation transition A + longueur transition, implantation transition B
+	/// implantation transition A + longueur transition, implantation transition B
 	private double[] yTube2_droite = { -IHMPrincipale.fusee1.xA-IHMPrincipale.fusee1.lA, -IHMPrincipale.fusee1.xB };
-	// Séries de valeurs pour le troisième tube
-	// d2B/2, d2B/2
+	/// Séries de valeurs pour le troisième tube
+	/// d2B/2, d2B/2
 	private double[] xTube3_gauche = { -IHMPrincipale.fusee1.d2B/2, -IHMPrincipale.fusee1.d2B/2 };
-	// implantation transition B + longueur transition, longueur totale
+	/// implantation transition B + longueur transition, longueur totale
 	private double[] yTube3_gauche = { -IHMPrincipale.fusee1.xB-IHMPrincipale.fusee1.lB, -IHMPrincipale.fusee1.longTot };
-	// d2B/2, d2B/2
+	/// d2B/2, d2B/2
 	private double[] xTube3_droite = { IHMPrincipale.fusee1.d2B/2, IHMPrincipale.fusee1.d2B/2 };
-	// implantation transition B + longueur transition, longueur totale
+	/// implantation transition B + longueur transition, longueur totale
 	private double[] yTube3_droite = { -IHMPrincipale.fusee1.xB-IHMPrincipale.fusee1.lB, -IHMPrincipale.fusee1.longTot };
-	// Séries de valeurs pour le moteur
-	// rayon moteur, rayon moteur
+	/// Séries de valeurs pour le moteur
+	/// rayon moteur, rayon moteur
 	private double[] xMoteur_gauche = { -IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2, -IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2 };
-	// position du bas du moteur - longueur du moteur, position du bas du moteur
+	/// position du bas du moteur - longueur du moteur, position du bas du moteur
 	private double[] yMoteur_gauche = { -IHMPrincipale.fusee1.xPropuRef+IHMPrincipale.XMLMoteur1.getLongueurMoteur(), 
 			-IHMPrincipale.fusee1.xPropuRef };
-	// rayon moteur, rayon moteur
+	/// rayon moteur, rayon moteur
 	private double[] xMoteur_droite = { IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2, IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2 };
-	// position du bas du moteur - longueur du moteur, position du bas du moteur
+	/// position du bas du moteur - longueur du moteur, position du bas du moteur
 	private double[] yMoteur_droite = { -IHMPrincipale.fusee1.xPropuRef+IHMPrincipale.XMLMoteur1.getLongueurMoteur(), 
 			-IHMPrincipale.fusee1.xPropuRef };
-	// rayon moteur, rayon moteur
+	/// rayon moteur, rayon moteur
 	private double[] xMoteur_haut = { -IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2, IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2 };
-	// position du bas du moteur - longueur du moteur, position du bas du moteur - longueur du moteur
+	/// position du bas du moteur - longueur du moteur, position du bas du moteur - longueur du moteur
 	private double[] yMoteur_haut = { -IHMPrincipale.fusee1.xPropuRef+IHMPrincipale.XMLMoteur1.getLongueurMoteur(), 
 			-IHMPrincipale.fusee1.xPropuRef+IHMPrincipale.XMLMoteur1.getLongueurMoteur() };
-	// rayon moteur, rayon moteur
+	/// rayon moteur, rayon moteur
 	private double[] xMoteur_bas = { -IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2, IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2 };
-	// position du bas du moteur, position du bas du moteur
+	/// position du bas du moteur, position du bas du moteur
 	private double[] yMoteur_bas = { -IHMPrincipale.fusee1.xPropuRef, -IHMPrincipale.fusee1.xPropuRef };
-	// Séries de valeurs pour le culot
-	// d2B/2, d2B/2
+	/// Séries de valeurs pour le culot
+	/// d2B/2, d2B/2
 	private double[] xCulot = { -IHMPrincipale.fusee1.d2B/2, IHMPrincipale.fusee1.d2B/2 };
-	// longueur totale, longueur totale
+	/// longueur totale, longueur totale
 	private double[] yCulot = { -IHMPrincipale.fusee1.longTot, -IHMPrincipale.fusee1.longTot };
-	// Séries de valeurs liées à la stabilité
-	private double[] xCdG = { -0.0, -0.0 };		// on suppose le centre de gravité sur l'axe longitudinal de la fusée
-	// centres de gravité moteur vide puis avec moteur plein
+	/// Séries de valeurs liées à la stabilité
+	private double[] xCdG = { -0.0, -0.0 };		/// on suppose le centre de gravité sur l'axe longitudinal de la fusée
+	/// centres de gravité moteur vide puis avec moteur plein
 	private double[] yCdG = { -IHMPrincipale.fusee1.xCGVide, -IHMPrincipale.fusee1.xCGPlein };
-	private double[] xFdP = { -0.0, -0.0 };		// on suppose le foyer de portance sur l'axe longitudinal de la fusée
-	// foyer de portance
+	private double[] xFdP = { -0.0, -0.0 };		/// on suppose le foyer de portance sur l'axe longitudinal de la fusée
+	/// foyer de portance
 	private double[] yFdP = { -IHMPrincipale.fusee1.xCPFusee, -IHMPrincipale.fusee1.xCPFusee };
-	// Valeurs fantômes pour tracer un repère orthonormé
+	/// Valeurs fantômes pour tracer un repère orthonormé
 	private double LAMax;
 	private double LBMax;
 	private double LtotFleche;
@@ -318,15 +318,15 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 	protected static String resultatDiagnostic = "\n	INSTABLE	\n";
 	protected static String boiteAuxLettres = "";
 	
-	//affichage des résultats
+	///affichage des résultats
 	private GTextArea boxMessage = new GTextArea(boiteAuxLettres);
 
 	public WidStab() {
 
-		// for (int i = 0; i < numColTop; i++) {
-		// colTop[i] = new GLabel("Col "+(i+1));
-		// colTop[i].setConstraint(new GConstraint());
-		// }
+		/// for (int i = 0; i < numColTop; i++) {
+		/// colTop[i] = new GLabel("Col "+(i+1));
+		/// colTop[i].setConstraint(new GConstraint());
+		/// }
 
 		menuFusees.setInnerDescendantConstraint(new GConstraint(GConstraint.spanx(2), GConstraint.growx()), 1);
 		
@@ -433,9 +433,9 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 		menuTransition.setInnerDescendantConstraint(
 				new GConstraint(GConstraint.newline(true, 20), GConstraint.split(2)), 0, 0);
 		menuTransition.setInnerDescendantConstraint(new GConstraint(GConstraint.spanx(2), GConstraint.growx()), 1);
-//		sousTitreResultatEtage2.setConstraint(new GConstraint(GConstraint.skip(1)));
-//		sousTitreResultatEtage1.setConstraint(
-//				new GConstraint(GConstraint.newline(true, 0), GConstraint.skip(4), GConstraint.spany(2)));
+///		sousTitreResultatEtage2.setConstraint(new GConstraint(GConstraint.skip(1)));
+///		sousTitreResultatEtage1.setConstraint(
+///				new GConstraint(GConstraint.newline(true, 0), GConstraint.skip(4), GConstraint.spany(2)));
 		labTransitionA.setConstraint(new GConstraint(GConstraint.newline(true, 0), GConstraint.skip(1)));
 		boxLongueurA.setInnerDescendantConstraint(new GConstraint(GConstraint.width(80), GConstraint.split(2)), 1);
 		boxDiametreD1A.setInnerDescendantConstraint(new GConstraint(GConstraint.width(80), GConstraint.split(2)), 1);
@@ -459,7 +459,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 		niveauDetail.setConstraint(new GConstraint(GConstraint.newline(true, 20), GConstraint.spanx(2)));
 
 		 try {
-		 // appelle différentes séries en fonction de la catégorie (micro, fusex...) sélectionnée
+		 /// appelle différentes séries en fonction de la catégorie (micro, fusex...) sélectionnée
 			diagrammeStabilite.addSerie("CnAlphaMin", xCnAlpha, yCnAlphaMin, Color.RED, true);
 		 	diagrammeStabilite.addSerie("CnAlphaMax", xCnAlpha, yCnAlphaMax, Color.RED, true);
 		 	diagrammeStabilite.addSerie("MSMin", xMSMin, yMS, Color.RED, true);
@@ -471,12 +471,12 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 		 	diagrammeStabilite.setXZoom(0.0, 8.0);
 		 	diagrammeStabilite.setYZoom(false, 0.0, 60.0);
 		 } catch (GFreeChartException e) {
-			 // TODO Auto-generated catch block
+			 /// TODO Auto-generated catch block
 			 e.printStackTrace();
 		 }
 		 
 		 try {
-			 // appel des différentes séries de valeurs pour le tracé de la fusée
+			 /// appel des différentes séries de valeurs pour le tracé de la fusée
 			 schemaFusee.addSerie("Ogive 1", xOgive1, yOgive1, Color.MAGENTA, true);
 			 schemaFusee.addSerie("Emplanture empennage arrière gauche", Ail_gauche_x_emplanture, Ail_gauche_y_emplanture, Color.GREEN, 
 					 true);
@@ -510,7 +510,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			 schemaFusee.setXZoom(-0.22, 0.22);
 			 schemaFusee.setYZoom(false, -1.08, 0.0);
 		} catch (GFreeChartException e) {
-			// TODO Auto-generated catch block
+			/// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -534,15 +534,15 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 
 		IHMPrincipale.fusee1.setLongOgive(boxHauteurOgive.getValue());
 		IHMPrincipale.fusee1.setDOgive(boxDiametreOgive.getValue());
-		IHMPrincipale.fusee1.setTypeOgive(menuOgive.getValue()); 	// 0 s'il n'y a pas d'ogive, 
-													// 1 pour parabolique, 
-													// 2 pour ogivale et 
-													// 3 pour conique
+		IHMPrincipale.fusee1.setTypeOgive(menuOgive.getValue()); 	/// 0 s'il n'y a pas d'ogive, 
+													/// 1 pour parabolique, 
+													/// 2 pour ogivale et 
+													/// 3 pour conique
 
-		IHMPrincipale.fusee1.setNombreJeuxAil(menuAilerons.getValue()); 	// 0 par défaut, 
-															// 1 pour mono-empennage, 
-															// 2 pour bi-empennage et 
-															// 3 pour bi-empennage à demi-masqué
+		IHMPrincipale.fusee1.setNombreJeuxAil(menuAilerons.getValue()); 	/// 0 par défaut, 
+															/// 1 pour mono-empennage, 
+															/// 2 pour bi-empennage et 
+															/// 3 pour bi-empennage à demi-masqué
 		IHMPrincipale.fusee1.setEmplantureAil(boxEmplanture1.getValue());
 		IHMPrincipale.fusee1.setEnvergureAil(boxEnvergure1.getValue());
 		IHMPrincipale.fusee1.setSaumonAil(boxSaumon1.getValue());
@@ -569,23 +569,23 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 		IHMPrincipale.fusee1.setD2B(boxDiametreD2B.getValue());
 		IHMPrincipale.fusee1.setXB(boxImplantationXB.getValue());
 
-		IHMPrincipale.fusee1.setEtatMoteur(menuCentreDeMasses.getValue()); // 0 si absent, 
-															// 1 si vide et 
-															// 2 si plein
+		IHMPrincipale.fusee1.setEtatMoteur(menuCentreDeMasses.getValue()); /// 0 si absent, 
+															/// 1 si vide et 
+															/// 2 si plein
 		if (menuMasses.getSelectedItem().equals("sans propu")) {
 			IHMPrincipale.fusee1.setMasseSansMoteur(boxMasse.getValue());
 		} else if (menuMasses.getSelectedItem().equals("avec propu vide")) {
 			IHMPrincipale.fusee1.setMasseSansMoteur(boxMasse.getValue() - (IHMPrincipale.XMLMoteur1.getMasseaVideMoteur()));
-		} else { // cas où le propulseur est plein
+		} else { /// cas où le propulseur est plein
 			IHMPrincipale.fusee1.setMasseSansMoteur(boxMasse.getValue() - (IHMPrincipale.XMLMoteur1.getMasseTotaleMoteur()));
 		}
 
-		IHMPrincipale.fusee1.setNombreTransitions(menuTransition.getValue()); // 0 s'il n'y a pas de transition, 
-																// 1 s'il y en a une et
-																// 2 s'il y en a 2
+		IHMPrincipale.fusee1.setNombreTransitions(menuTransition.getValue()); /// 0 s'il n'y a pas de transition, 
+																/// 1 s'il y en a une et
+																/// 2 s'il y en a 2
 
-		// le diamètre de référence pour la stabilité est celui pris au pied de
-		// l'ogive
+		/// le diamètre de référence pour la stabilité est celui pris au pied de
+		/// l'ogive
 		IHMPrincipale.fusee1.setDRef(boxDiametreOgive.getValue());
 
 		IHMPrincipale.fusee1.setDAil(boxDiametre1.getValue());
@@ -603,7 +603,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 	@Override
 	public void generic() throws GException {
 
-		// for (int i = 0; i < numColTop; i++) { put(colTop[i]); }
+		/// for (int i = 0; i < numColTop; i++) { put(colTop[i]); }
 		
 		put(menuFusees);
 		put(schemaFusee);
@@ -612,7 +612,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 		
 		put(boxMessage);
 
-		if (menuFusees.getValue() == 5) {//menuFusees.getSelectedItem().equals("Bi-étage")
+		if (menuFusees.getValue() == 5) {///menuFusees.getSelectedItem().equals("Bi-étage")
 
 			put(lab1etage);
 			put(lab2etage);
@@ -632,18 +632,18 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			put(menuMoteurs2Etage);
 			if (menuMoteurs.getSelectedItem().equals("pas de moteur")) {
 				if (menuMoteurs2Etage.getSelectedItem().equals("pas de moteur")) {
-					// afficher un message d'avertissement 1
-					// afficher un message d'avertissement 2
+					/// afficher un message d'avertissement 1
+					/// afficher un message d'avertissement 2
 					put(dummyLabel1);
 				} else {
-					// afficher un message d'avertissement 2
+					/// afficher un message d'avertissement 2
 					put(dummyLabel2);
 					put(dummyLabel3);
 					put(boxPositionDuBas2Etage);
 				}
 			} else {
 				if (menuMoteurs2Etage.getSelectedItem().equals("pas de moteur")) {
-					// afficher un message d'avertissement 1
+					/// afficher un message d'avertissement 1
 					put(boxPositionDuBas);
 				} else {
 					put(boxPositionDuBas);
@@ -656,11 +656,11 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			put(diagrammeStabilite);
 			if (menuOgive.getSelectedItem().equals("Pas d'ogive")) {
 				if (menuOgive2Etage.getSelectedItem().equals("Pas d'ogive")) {
-					// afficher un message d'avertissement 1
-					// afficher un message d'avertissement 2
+					/// afficher un message d'avertissement 1
+					/// afficher un message d'avertissement 2
 					put(dummyLabel4);
 				} else {
-					// afficher un message d'avertissement 2
+					/// afficher un message d'avertissement 2
 					put(dummyLabel5);
 					put(dummyLabel6);
 					put(boxHauteurOgive2Etage);
@@ -670,7 +670,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 				}
 			} else {
 				if (menuOgive2Etage.getSelectedItem().equals("Pas d'ogive")) {
-					// afficher un message d'avertissement 1
+					/// afficher un message d'avertissement 1
 					put(boxHauteurOgive);
 					put(boxDiametreOgive);
 				} else {
@@ -681,7 +681,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 				}
 			}
 
-		} else { // cas des fusées mono-étage
+		} else { /// cas des fusées mono-étage
 
 			put(boxMasse);
 			put(menuMasses);
@@ -691,7 +691,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 
 			put(menuMoteurs);
 			if (menuMoteurs.getSelectedItem().equals("pas de moteur")) {
-				// afficher un message d'avertissement
+				/// afficher un message d'avertissement
 			} else {
 				put(boxPositionDuBas);
 			}
@@ -699,7 +699,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			put(menuOgive);
 			put(diagrammeStabilite);
 			if (menuOgive.getSelectedItem().equals("Pas d'ogive")) {
-				// afficher un message d'avertissement
+				/// afficher un message d'avertissement
 			} else {
 				put(boxHauteurOgive);
 				put(boxDiametreOgive);
@@ -739,11 +739,11 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			put(boxDiametre2);
 		}
 
-//		put(diagrammeStabilite);
+///		put(diagrammeStabilite);
 		put(menuTransition);
-		if (menuFusees.getValue() == 5) {//menuFusees.getSelectedItem().equals("Bi-étage")
-//			put(sousTitreResultatEtage2);
-//			put(sousTitreResultatEtage1);
+		if (menuFusees.getValue() == 5) {///menuFusees.getSelectedItem().equals("Bi-étage")
+///			put(sousTitreResultatEtage2);
+///			put(sousTitreResultatEtage1);
 		}
 
 		if (menuTransition.getSelectedItem().equals("Une transition")) {
@@ -765,8 +765,8 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			put(boxImplantationXB);
 		}
 
-		put(niveauDetail); // permettra avec des boucles if d'afficher plus de
-							// résultats si voulu par l'utilisateur
+		put(niveauDetail); /// permettra avec des boucles if d'afficher plus de
+							/// résultats si voulu par l'utilisateur
 	}
 
 	public void affichage() throws GException {
@@ -808,30 +808,30 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 		 * Cette méthode est déclenchée par les événements modifiant la forme de la fusée
 		 */
 		
-		if (arg0.contains(menuFusees)) { // il est nécessaire de distinguer la procédure ci-dessous sinon les objets GCombox
-			 // ne s'actualisent pas.
+		if (arg0.contains(menuFusees)) { /// il est nécessaire de distinguer la procédure ci-dessous sinon les objets GCombox
+			 /// ne s'actualisent pas.
 
-			// Partie pour les menus des moteurs
-			// L'idéal serait de montrer la liste de moteurs dont on a les fichiers RASP
-			if(menuFusees.getValue() == 5) {	// il faudrait trier les moteurs de la même façon... //menuFusees.getSelectedItem().equals("Bi-étage")
+			/// Partie pour les menus des moteurs
+			/// L'idéal serait de montrer la liste de moteurs dont on a les fichiers RASP
+			if(menuFusees.getValue() == 5) {	/// il faudrait trier les moteurs de la même façon... ///menuFusees.getSelectedItem().equals("Bi-étage")
 				menuMoteurs.setValueList(1, null, "pas de moteur", "H2O 2.0L 1000g 6bar", "µ-propu C6-3", "Cariacou", 
 						"Pro24-3G_75F51", "Pro54 Barasinga");
-			} else if (menuFusees.getValue() == 0) {//menuFusees.getSelectedItem().equals("Fusée à eau")
+			} else if (menuFusees.getValue() == 0) {///menuFusees.getSelectedItem().equals("Fusée à eau")
 				menuMoteurs.setValueList(1, null, "pas de moteur", "H2O 1.5L 300g 6bar", "H2O 1.5L 450g 6bar", 
 						"H2O 1.5L 600g 6bar", "H2O 1.5L 750g 6bar", "H2O 2.0L 400g 6bar", "H2O 2.0L 600g 6bar", 
 						"H2O 2.0L 800g 6bar", "H2O 2.0L 1000g 6bar");
-			} else if (menuFusees.getValue() == 1) {//menuFusees.getSelectedItem().equals("Microfusée")
+			} else if (menuFusees.getValue() == 1) {///menuFusees.getSelectedItem().equals("Microfusée")
 				menuMoteurs.setValueList(1, null, "pas de moteur", "µ-propu A8-3", "µ-propu B4-4", "µ-propu C6-3",
 						"µ-propu C6-3 x2", "µ-propu C6-3 x3");
-			} else if (menuFusees.getValue() == 2) {//menuFusees.getSelectedItem().equals("Rocketry Challenge")
+			} else if (menuFusees.getValue() == 2) {///menuFusees.getSelectedItem().equals("Rocketry Challenge")
 				menuMoteurs.setValueList(1, null, "pas de moteur", "Pro24-1G_24E22", "Pro24-1G_25E75_Rufina_RC", 
 						"Pro24-1G_26E31", "Pro29-1G_41F36", "Pro29-1G_51F36", "Pro29-1G_55F29", "Pro29-1G_56F120_RC", 
 						"Pro29-1G_57F59", "Pro24-3G_60F50", "Pro24-3G_68F79", "Pro24-3G_68F240", "Pro24-3G_73F30", 
 						"Pro24-3G_74F85", "Pro24-3G_75F51");
-			} else if (menuFusees.getValue() == 3) {//menuFusees.getSelectedItem().equals("Minifusée")
+			} else if (menuFusees.getValue() == 3) {///menuFusees.getSelectedItem().equals("Minifusée")
 				menuMoteurs.setValueList(1, null, "pas de moteur", "Cariacou", "Pro24-1G_25E75_Rufina_C'Space", 
 						"Pro29-1G_56F120_C'Space", "Pro29-2G_110G250_C'Space");
-			} else if (menuFusees.getValue() == 4) {//menuFusees.getSelectedItem().equals("Fusée expérimentale")
+			} else if (menuFusees.getValue() == 4) {///menuFusees.getSelectedItem().equals("Fusée expérimentale")
 				menuMoteurs.setValueList(1, null, "pas de moteur", "Pro54 Barasinga", "Pro75");
 			}
 		}
@@ -842,14 +842,14 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 				boxFleche2, boxEnvergure2, boxNombre2, boxPositionDuBas2, boxDiametre2, menuTransition, boxLongueurA,
 				boxDiametreD1A, boxDiametreD2A, boxImplantationXA, boxLongueurB, boxDiametreD1B, boxDiametreD2B, 
 				boxImplantationXB, niveauDetail)) {
-			// il manque les évènements liés à la seconde ogive etc
+			/// il manque les évènements liés à la seconde ogive etc
 			
-			// il faut ré-exécuter ces méthodes pour rafraîchir l'objet fusee1
+			/// il faut ré-exécuter ces méthodes pour rafraîchir l'objet fusee1
 			setter();
 			Stab.calculStab(IHMPrincipale.fusee1);
 			
-			// On actualise les séries de valeurs à tracer
-			// Ici pour le diagramme de stabilité
+			/// On actualise les séries de valeurs à tracer
+			/// Ici pour le diagramme de stabilité
 			int i = 0;
 			while (i < 8) {
 				yCnAlphaMax[i] = Stab.getCritCnMax();
@@ -866,8 +866,8 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			yFusee[0] = IHMPrincipale.fusee1.getPortanceFusee();
 			yFusee[1] = IHMPrincipale.fusee1.getPortanceFusee();
 			
-			// Et ici pour le tracé de la fusée
-			// ogive
+			/// Et ici pour le tracé de la fusée
+			/// ogive
 			switch (menuOgive.getSelectedItem()) {
 			case "Pas d'ogive":
 				xOgive1[0] = -(boxDiametreOgive.getValue())/2;
@@ -879,7 +879,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 				repereYOgive = -boxHauteurOgive.getValue();
 			break;
 			case "Parabolique (arrondie)":
-				//tbd
+				///tbd
 				xOgive1[0] = -(boxDiametreOgive.getValue())/2;
 				xOgive1[1] = 0;
 				xOgive1[2] = (boxDiametreOgive.getValue())/2;
@@ -889,7 +889,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 				repereYOgive = 0;
 			break;
 			case "Ogivale (pointue)":
-				//tbd
+				///tbd
 				xOgive1[0] = -(boxDiametreOgive.getValue())/2;
 				xOgive1[1] = 0;
 				xOgive1[2] = (boxDiametreOgive.getValue())/2;
@@ -899,7 +899,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 				repereYOgive = 0;
 			break;
 			case "Conique (droite)":
-				//tbd
+				///tbd
 				xOgive1[0] = -(boxDiametreOgive.getValue())/2;
 				xOgive1[1] = 0;
 				xOgive1[2] = (boxDiametreOgive.getValue())/2;
@@ -909,144 +909,144 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 				repereYOgive = 0;
 			break;
 			}
-			// aileron gauche
-			// rayon au niveau des ailerons
+			/// aileron gauche
+			/// rayon au niveau des ailerons
 			Ail_gauche_x_emplanture[0] = -boxDiametre1.getValue()/2;
 			Ail_gauche_x_emplanture[1] = -boxDiametre1.getValue()/2;
-			// position du bas - emplanture, position du bas
+			/// position du bas - emplanture, position du bas
 			Ail_gauche_y_emplanture[0] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+repereYOgive);
 			Ail_gauche_y_emplanture[1] = -(boxPositionDuBas1.getValue()+repereYOgive);
-			// rayon au niveau des ailerons + semi-envergure
+			/// rayon au niveau des ailerons + semi-envergure
 			Ail_gauche_x_saumon[0] = -((boxDiametre1.getValue()/2)+boxEnvergure1.getValue());
 			Ail_gauche_x_saumon[1] = -((boxDiametre1.getValue()/2)+boxEnvergure1.getValue());
-			//position du bas à la flèche près - saumon, position du bas à la flèche près
+			///position du bas à la flèche près - saumon, position du bas à la flèche près
 			Ail_gauche_y_saumon[0] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+boxFleche1.getValue()+repereYOgive);
 			Ail_gauche_y_saumon[1] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+boxFleche1.getValue()+boxSaumon1.getValue()
 				+repereYOgive);
-			//rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
+			///rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
 			Ail_gauche_x_BA[0] = -((boxDiametre1.getValue()/2)+boxEnvergure1.getValue());
 			Ail_gauche_x_BA[1] = -boxDiametre1.getValue()/2;
-			// position du bas - saumon à la flèche près
+			/// position du bas - saumon à la flèche près
 			Ail_gauche_y_BA[0] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+boxFleche1.getValue()+repereYOgive);
 			Ail_gauche_y_BA[1] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+repereYOgive);
-			//rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
+			///rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
 			Ail_gauche_x_BF[0] = -((boxDiametre1.getValue()/2)+boxEnvergure1.getValue());
 			Ail_gauche_x_BF[1] = -boxDiametre1.getValue()/2;
-			// position du bas à la flèche près, position du bas
+			/// position du bas à la flèche près, position du bas
 			Ail_gauche_y_BF[0] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+boxFleche1.getValue()+boxSaumon1.getValue()
 				+repereYOgive);
 			Ail_gauche_y_BF[1] = -(boxPositionDuBas1.getValue()+repereYOgive);
-			// aileron droit
-			// rayon au niveau des ailerons
+			/// aileron droit
+			/// rayon au niveau des ailerons
 			Ail_droite_x_emplanture[0] = boxDiametre1.getValue()/2;
 			Ail_droite_x_emplanture[1] = boxDiametre1.getValue()/2;
-			// position du bas - emplanture, position du bas
+			/// position du bas - emplanture, position du bas
 			Ail_droite_y_emplanture[0] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+repereYOgive);
 			Ail_droite_y_emplanture[1] = -(boxPositionDuBas1.getValue()+repereYOgive);
-			// rayon au niveau des ailerons + semi-envergure
+			/// rayon au niveau des ailerons + semi-envergure
 			Ail_droite_x_saumon[0] = (boxDiametre1.getValue()/2)+boxEnvergure1.getValue();
 			Ail_droite_x_saumon[1] = (boxDiametre1.getValue()/2)+boxEnvergure1.getValue();
-			// position du bas - emplanture + flèche, position du bas - emplanture + flèche + saumon
+			/// position du bas - emplanture + flèche, position du bas - emplanture + flèche + saumon
 			Ail_droite_y_saumon[0] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+boxFleche1.getValue()+repereYOgive);
 			Ail_droite_y_saumon[1] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+boxFleche1.getValue()+boxSaumon1.getValue()
 				+repereYOgive);
-			// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
+			/// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
 			Ail_droite_x_BA[0] = (boxDiametre1.getValue()/2)+boxEnvergure1.getValue();
 			Ail_droite_x_BA[1] = boxDiametre1.getValue()/2;
-			// position du bas - emplanture + flèche, position du bas - emplanture
+			/// position du bas - emplanture + flèche, position du bas - emplanture
 			Ail_droite_y_BA[0] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+boxFleche1.getValue()+repereYOgive);
 			Ail_droite_y_BA[1] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+repereYOgive);
-			// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
+			/// rayon au niveau des ailerons + semi-envergure, rayon au niveau des ailerons
 			Ail_droite_x_BF[0] = (boxDiametre1.getValue()/2)+boxEnvergure1.getValue();
 			Ail_droite_x_BF[1] = boxDiametre1.getValue()/2;
-			// position du bas - emplanture + flèche + saumon, position du bas
+			/// position du bas - emplanture + flèche + saumon, position du bas
 			Ail_droite_y_BF[0] = -(boxPositionDuBas1.getValue()-boxEmplanture1.getValue()+boxFleche1.getValue()+boxSaumon1.getValue()
 				+repereYOgive);
 			Ail_droite_y_BF[1] = -(boxPositionDuBas1.getValue()+repereYOgive);
-			// canard gauche
-			// rayon au niveau des canards
+			/// canard gauche
+			/// rayon au niveau des canards
 			Can_gauche_x_emplanture[0] = -boxDiametre2.getValue()/2;
 			Can_gauche_x_emplanture[1] = -boxDiametre2.getValue()/2;
-			// position du bas - emplanture, position du bas
+			/// position du bas - emplanture, position du bas
 			Can_gauche_y_emplanture[0] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+repereYOgive);
 			Can_gauche_y_emplanture[1] = -(boxPositionDuBas2.getValue()+repereYOgive);
-			// rayon au niveau des canards + semi-envergure
+			/// rayon au niveau des canards + semi-envergure
 			Can_gauche_x_saumon[0] = -((boxDiametre2.getValue()/2)+boxEnvergure2.getValue());
 			Can_gauche_x_saumon[1] = -((boxDiametre2.getValue()/2)+boxEnvergure2.getValue());
-			// position du bas à la flèche près, position du bas à la flèche près - saumon
+			/// position du bas à la flèche près, position du bas à la flèche près - saumon
 			Can_gauche_y_saumon[0] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+boxFleche2.getValue()+repereYOgive);
 			Can_gauche_y_saumon[1] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+boxFleche2.getValue()+boxSaumon2.getValue()
 				+repereYOgive);
-			//rayon au niveau des canards + semi-envergure, rayon au niveau des canards
+			///rayon au niveau des canards + semi-envergure, rayon au niveau des canards
 			Can_gauche_x_BA[0] = -((boxDiametre2.getValue()/2)+boxEnvergure2.getValue());
 			Can_gauche_x_BA[1] = -boxDiametre2.getValue()/2;
-			// position du bas - emplanture + flèche, position du bas - emplanture
+			/// position du bas - emplanture + flèche, position du bas - emplanture
 			Can_gauche_y_BA[0] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+boxFleche2.getValue()+repereYOgive);
 			Can_gauche_y_BA[1] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+repereYOgive);
-			//rayon au niveau des canards + semi-envergure, rayon au niveau des canards
+			///rayon au niveau des canards + semi-envergure, rayon au niveau des canards
 			Can_gauche_x_BF[0] = -((boxDiametre2.getValue()/2)+boxEnvergure2.getValue());
 			Can_gauche_x_BF[1] = -boxDiametre2.getValue()/2;
-			// position du bas à la flèche près, position du bas
+			/// position du bas à la flèche près, position du bas
 			Can_gauche_y_BF[0] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+boxFleche2.getValue()+boxSaumon2.getValue()
 				+repereYOgive);
 			Can_gauche_y_BF[1] = -(boxPositionDuBas2.getValue()+repereYOgive);
-			// canard droit
-			// rayon au niveau des canards
+			/// canard droit
+			/// rayon au niveau des canards
 			Can_droite_x_emplanture[0] = boxDiametre2.getValue()/2;
 			Can_droite_x_emplanture[1] = boxDiametre2.getValue()/2;
-			// position du bas - emplanture, position du bas
+			/// position du bas - emplanture, position du bas
 			Can_droite_y_emplanture[0] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+repereYOgive);
 			Can_droite_y_emplanture[1] = -(boxPositionDuBas2.getValue()+repereYOgive);
-			// rayon au niveau des canards + semi-envergure
+			/// rayon au niveau des canards + semi-envergure
 			Can_droite_x_saumon[0] = (boxDiametre2.getValue()/2)+boxEnvergure2.getValue();
 			Can_droite_x_saumon[1] = (boxDiametre2.getValue()/2)+boxEnvergure2.getValue();
-			// position du bas - emplanture + flèche, position du bas - emplanture + flèche + saumon
+			/// position du bas - emplanture + flèche, position du bas - emplanture + flèche + saumon
 			Can_droite_y_saumon[0] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+boxFleche2.getValue()+repereYOgive);
 			Can_droite_y_saumon[1] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+boxFleche2.getValue()+boxSaumon2.getValue()
 				+repereYOgive);
-			// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
+			/// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
 			Can_droite_x_BA[0] = (boxDiametre2.getValue()/2)+boxEnvergure2.getValue();
 			Can_droite_x_BA[1] = boxDiametre2.getValue()/2;
-			// position du bas - emplanture + flèche, position du bas - emplanture
+			/// position du bas - emplanture + flèche, position du bas - emplanture
 			Can_droite_y_BA[0] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+boxFleche2.getValue()+repereYOgive);
 			Can_droite_y_BA[1] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+repereYOgive);
-			// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
+			/// rayon au niveau des canards + semi-envergure, rayon au niveau des canards
 			Can_droite_x_BF[0] = (boxDiametre2.getValue()/2)+boxEnvergure2.getValue();
 			Can_droite_x_BF[1] = boxDiametre2.getValue()/2;
-			// position du bas - emplanture, + flèche + saumon, position du bas
+			/// position du bas - emplanture, + flèche + saumon, position du bas
 			Can_droite_y_BF[0] = -(boxPositionDuBas2.getValue()-boxEmplanture2.getValue()+boxFleche2.getValue()+boxSaumon2.getValue()
 				+repereYOgive);
 			Can_droite_y_BF[1] = -(boxPositionDuBas2.getValue()+repereYOgive);
 			
-			// transition A
-			//D2A/2, D1A/2
+			/// transition A
+			///D2A/2, D1A/2
 			TransitionA_x_gauche[0] = -boxDiametreD2A.getValue()/2;
 			TransitionA_x_gauche[1] = -boxDiametreD1A.getValue()/2;
-			//implantation + longueur de la transition, implantation
+			///implantation + longueur de la transition, implantation
 			TransitionA_y_gauche[0] = -(boxImplantationXA.getValue()+boxLongueurA.getValue()+repereYOgive);
 			TransitionA_y_gauche[1] = -(boxImplantationXA.getValue()+repereYOgive);
-			// D2A/2, D1A/2
+			/// D2A/2, D1A/2
 			TransitionA_x_droite[0] = boxDiametreD2A.getValue()/2;
 			TransitionA_x_droite[1] = boxDiametreD1A.getValue()/2;
-			// implantation + longueur de la transition, implantation
+			/// implantation + longueur de la transition, implantation
 			TransitionA_y_droite[0] = -(boxImplantationXA.getValue()+boxLongueurA.getValue()+repereYOgive);
 			TransitionA_y_droite[1] = -(boxImplantationXA.getValue()+repereYOgive);
-			// transition B
-			//D2B/2, D1B/2
+			/// transition B
+			///D2B/2, D1B/2
 			TransitionB_x_gauche[0] = -boxDiametreD2B.getValue()/2;
 			TransitionB_x_gauche[1] = -boxDiametreD1B.getValue()/2;
-			//implantation + longueur de la transition, implantation
+			///implantation + longueur de la transition, implantation
 			TransitionB_y_gauche[0] = -(boxImplantationXB.getValue()+boxLongueurB.getValue()+repereYOgive);
 			TransitionB_y_gauche[1] = -(boxImplantationXB.getValue()+repereYOgive);
-			// D2B/2, D1B/2
+			/// D2B/2, D1B/2
 			TransitionB_x_droite[0] = boxDiametreD2B.getValue()/2;
 			TransitionB_x_droite[1] = boxDiametreD1B.getValue()/2;
-			// implantation + longueur de la transition, implantation
+			/// implantation + longueur de la transition, implantation
 			TransitionB_y_droite[0] = -(boxImplantationXB.getValue()+boxLongueurB.getValue()+repereYOgive);
 			TransitionB_y_droite[1] = -(boxImplantationXB.getValue()+repereYOgive);
 			
-			// Premier tube et culot
-			// N.B. : peu robuste à l'absence d'ogive (il faudrait prendre le diamètre de référence)
+			/// Premier tube et culot
+			/// N.B. : peu robuste à l'absence d'ogive (il faudrait prendre le diamètre de référence)
 			switch (menuTransition.getSelectedItem()) {
 			case "Pas de transition":
 				xCulot[0] = -boxDiametreOgive.getValue()/2;
@@ -1160,7 +1160,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			}
 			yCulot[0] = -(boxLongTot.getValue()+repereYOgive);
 			yCulot[1] = -(boxLongTot.getValue()+repereYOgive);
-			// moteur
+			/// moteur
 			xMoteur_gauche[0] = -IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2;
 			xMoteur_gauche[1] = -IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2;
 			yMoteur_gauche[0] = -boxPositionDuBas.getValue()+IHMPrincipale.XMLMoteur1.getLongueurMoteur()-repereYOgive;
@@ -1177,14 +1177,14 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			xMoteur_bas[1] = IHMPrincipale.XMLMoteur1.getDiametreMoteur()/2;
 			yMoteur_bas[0] = -boxPositionDuBas.getValue()-repereYOgive;
 			yMoteur_bas[1] = -boxPositionDuBas.getValue()-repereYOgive;
-			// centres de masses
+			/// centres de masses
 			yCdG[0] = -(IHMPrincipale.fusee1.getXCGVide()+repereYOgive);
 			yCdG[1] = -(IHMPrincipale.fusee1.getXCGPlein()+repereYOgive);
-			// foyer de portance
+			/// foyer de portance
 			yFdP[0] = -(IHMPrincipale.fusee1.getXCPFusee()+repereYOgive);
 			yFdP[1] = -(IHMPrincipale.fusee1.getXCPFusee()+repereYOgive);
-			// logique pour déterminer les plages de variation en x et y
-			// (il manque les aspects liés à un deuxième étage (deuxième ogive, etc))
+			/// logique pour déterminer les plages de variation en x et y
+			/// (il manque les aspects liés à un deuxième étage (deuxième ogive, etc))
 			LAMax = boxImplantationXA.getValue() + boxLongueurA.getValue() + repereYOgive;
 			LBMax = boxImplantationXB.getValue() + boxLongueurB.getValue() + repereYOgive;
 			LtotFleche = Math.max(boxPositionDuBas1.getValue() + boxFleche1.getValue(), 
@@ -1202,12 +1202,12 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			XMin = -XMax;
 				
 			try {
-				// Il faut d'abord retirer toutes les séries des deux objets GFreeChart
+				/// Il faut d'abord retirer toutes les séries des deux objets GFreeChart
 				diagrammeStabilite.removeAllSeries();
 				schemaFusee.removeAllSeries();
 				
-				// Enfin on rajoute les séries actualisées dans les objets GFreeChart
-				// ici pour le diagramme de stabilité
+				/// Enfin on rajoute les séries actualisées dans les objets GFreeChart
+				/// ici pour le diagramme de stabilité
 				diagrammeStabilite.addSerie("CnAlphaMin", xCnAlpha, yCnAlphaMin, Color.RED, true);
 			 	diagrammeStabilite.addSerie("CnAlphaMax", xCnAlpha, yCnAlphaMax, Color.RED, true);
 			 	diagrammeStabilite.addSerie("MSMin", xMSMin, yMS, Color.RED, true);
@@ -1215,10 +1215,10 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 			 	diagrammeStabilite.addSerie("CoupleMin", xCoupleMin, yCoupleMin, Color.RED, true);
 			 	diagrammeStabilite.addSerie("CoupleMax", xCoupleMax, yCoupleMax, Color.RED, true);
 				diagrammeStabilite.addSerie("Points Fusée Diagramme de stabilité", xFusee, yFusee, Color.BLUE, false);
-				// et ici pour le tracé de la fusée
+				/// et ici pour le tracé de la fusée
 				if (menuOgive.getSelectedItem().equals("Parabolique (arrondie)") || menuOgive.getSelectedItem().equals("Ogivale (pointue)")
 						|| menuOgive.getSelectedItem().equals("Conique (droite)")) {
-					// N.B.: il manque la gestion des différents profils d'ogives
+					/// N.B.: il manque la gestion des différents profils d'ogives
 					schemaFusee.addSerie("Ogive 1", xOgive1, yOgive1, Color.MAGENTA, true);
 				}
 				if (menuAilerons.getSelectedItem().equals("Mono-empennage")) {
@@ -1285,7 +1285,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 				schemaFusee.setXZoom(XMin, XMax);
 				schemaFusee.setYZoom(false, YMin, 0.0);
 			} catch (GFreeChartException e) {
-				// TODO Auto-generated catch block
+				/// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -1294,7 +1294,7 @@ public class WidStab extends GPanel implements GReadWrite, GListener {
 
 	@Override
 	public void before(GEvent arg0) throws GException {
-		// Rien à faire ...
+		/// Rien à faire ...
 	}
 
 	public void read() throws GException {

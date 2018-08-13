@@ -17,15 +17,15 @@ import fr.cnes.genius.main.GEvent;
 import fr.cnes.genius.main.GListener;
 import fr.cnes.genius.main.GReadWrite;
 
-//se servir de cet objet pour tracer des courbes "à la carte" dans la partie trajecto
-	// GPlotPanel plot1 = new GPlotPanel("1er titre", "2ème titre", "3ème titre", 3);
+///se servir de cet objet pour tracer des courbes "à la carte" dans la partie trajecto
+	/// GPlotPanel plot1 = new GPlotPanel("1er titre", "2ème titre", "3ème titre", 3);
 
 public class WidTraj extends GPanel implements GReadWrite, GListener {
 	
-	//déclaration des composants
+	///déclaration des composants
 	private GLabel labelFusee = new GLabel("Fusée");
 	private GEntryReal boxMasse = new GEntryReal("Masse totale", IHMPrincipale.fusee1.massePlein, IHMPrincipale.unitMasse);
-	//menu fusée et menu moteur tbd ?? //
+	///menu fusée et menu moteur tbd ?? ///
 	private GEntryReal boxSurfRef = new GEntryReal("Surface Réf.", IHMPrincipale.round(IHMPrincipale.fusee1.getSRefTrainee(), 6), 
 			IHMPrincipale.unitSurface);
 	private GEntryReal boxCx = new GEntryReal("Cx", IHMPrincipale.fusee1.cx, null);
@@ -33,7 +33,7 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 	private GEntryReal boxLongueurRampe = new GEntryReal("Longueur", IHMPrincipale.fusee1.lRampe, IHMPrincipale.unitLongueur);
 	private GEntryReal boxInclinaisonRampe = new GEntryReal("Inclinaison", IHMPrincipale.fusee1.betaRampe, IHMPrincipale.unitAngle);
 	private GEntryReal boxAltitudeRampe = new GEntryReal("Altitude", IHMPrincipale.fusee1.altRampe, IHMPrincipale.unitLongueur);
-	//descente sous parachute(s) de la fusée
+	///descente sous parachute(s) de la fusée
 	private GLabel labelPara = new GLabel("Descente sous parachute");
 	private GEntryReal boxMassePara = new GEntryReal("Masse", IHMPrincipale.fusee1.massePara, IHMPrincipale.unitMasse);
 	private int[] valueListPara = { 1, 2 };
@@ -66,28 +66,28 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 	private GEntryReal boxVitDesc2 = new GEntryReal("", IHMPrincipale.fusee1.vPara2, IHMPrincipale.unitVitesse);
 	private GEntryReal boxVitDesc = new GEntryReal("Vitesse de descente", IHMPrincipale.fusee1.vPara, IHMPrincipale.unitVitesse);
 	
-	//gérer l'éjection de masses au point de vue de la trajecto
-	//gérer les descentes des modules éjectés
+	///gérer l'éjection de masses au point de vue de la trajecto
+	///gérer les descentes des modules éjectés
 	
-	//courbe altitude / portée
+	///courbe altitude / portée
 	GFreeChartXY courbeAltitudePortee = new GFreeChartXY("Trajectoire (z x)", "Portée x (m)", "Altitude z (m)", null, true);
-	//variable fantôme pour gérer la plage de portée
+	///variable fantôme pour gérer la plage de portée
 	private double porteeMax = 0;
-	//courbe altitude / temps
+	///courbe altitude / temps
 	GFreeChartXY courbeAltitudeTemps = new GFreeChartXY("Trajectoire (z t)", "Temps t (s)", "Altitude z (m)", null, true);
-	//variable fantôme pour gérer la plage de portée
+	///variable fantôme pour gérer la plage de portée
 	private double dureeMax = 0;
 	
 	private String messageResultat = "";
 	private GTextArea tableauResultat = new GTextArea(messageResultat);
 	
-	//boîte pour afficher une valeur (débuggage)
-//	private GEntryReal boxDebug = new GEntryReal("Sortie de débugage", IHMPrincipale.fusee1.surfacePara1, 
-//			IHMPrincipale.unitSurface);
+	///boîte pour afficher une valeur (débuggage)
+///	private GEntryReal boxDebug = new GEntryReal("Sortie de débugage", IHMPrincipale.fusee1.surfacePara1, 
+///			IHMPrincipale.unitSurface);
 	
 	public WidTraj() throws GEntryRealException {
 		
-		//contraintes des composants
+		///contraintes des composants
 		boxMasse.setInnerDescendantConstraint(new GConstraint(GConstraint.width(80)), 1);
 		boxSurfRef.setInnerDescendantConstraint(new GConstraint(GConstraint.width(80)), 1);
 		boxCx.setInnerDescendantConstraint(new GConstraint(GConstraint.width(80)), 1);
@@ -134,7 +134,7 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 		boxVitDesc2.setInnerDescendantConstraint(null, 0, 0);
 		boxVitDesc2.setInnerDescendantConstraint(new GConstraint(GConstraint.split(2)), 0, 1);
 		boxVitDesc2.setInnerDescendantConstraint(new GConstraint(GConstraint.width(80)), 1);
-		boxVitDesc.setInnerDescendantConstraint(new GConstraint(GConstraint.width(80)), 1);//GConstraint.aligny(YAlign.Top)
+		boxVitDesc.setInnerDescendantConstraint(new GConstraint(GConstraint.width(80)), 1);///GConstraint.aligny(YAlign.Top)
 		
 		courbeAltitudePortee.setConstraint(new GConstraint(GConstraint.skip(6), 
 				GConstraint.spany(15), GConstraint.width(300), GConstraint.height(300)));
@@ -146,14 +146,14 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 		tableauResultat.setEditable(false);
 		
 		try {
-			//profil Altitude / Portée
+			///profil Altitude / Portée
 			courbeAltitudePortee.addSerie("Trajectoire balistique", IHMPrincipale.fusee1.xPortee, IHMPrincipale.fusee1.zAltitude, 
 					Color.BLUE, true);
 			courbeAltitudePortee.addSerie("Trajectoire sous parachute", IHMPrincipale.fusee1.xPorteePara, 
 					IHMPrincipale.fusee1.zAltitudePara, Color.GREEN, true);
 			courbeAltitudePortee.setXZoom(0.0, 140.0);
 			courbeAltitudePortee.setYZoom(false, 0.0, 150.0);
-			//profil Altitude / Temps
+			///profil Altitude / Temps
 			courbeAltitudeTemps.addSerie("Trajectoire balistique", IHMPrincipale.fusee1.xTemps, IHMPrincipale.fusee1.zAltitude, 
 					Color.BLUE, true);
 			courbeAltitudeTemps.addSerie("Trajectoire sous parachute", IHMPrincipale.fusee1.xTempsPara, IHMPrincipale.fusee1.zAltitudePara, 
@@ -161,7 +161,7 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 			courbeAltitudeTemps.setXZoom(0.0, 20.0);
 			courbeAltitudeTemps.setYZoom(false, 0.0, 150.0);
 		} catch (GFreeChartException e) {
-			// TODO Auto-generated catch block
+			/// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -169,7 +169,7 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 	@Override
 	public void display() throws GException {
 		setter();
-		//rajouter une logique dans stab : si non bi étage fixer les param initiaux de la trajecto dans l'objet fusee
+		///rajouter une logique dans stab : si non bi étage fixer les param initiaux de la trajecto dans l'objet fusee
 		Traj.calculTraj(IHMPrincipale.fusee1);
 		affichage();
 		generic();
@@ -209,7 +209,7 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 			}
 			put(boxSurfPara1);
 			put(boxCxPara1);
-		} else {	// si l'utilisateur a sélectionné l'option "2 parachutes"
+		} else {	/// si l'utilisateur a sélectionné l'option "2 parachutes"
 			put(labPara1);
 			put(labPara2);
 			put(boxDatePara1);
@@ -250,19 +250,19 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 		boxVitDesc.setValue(IHMPrincipale.round(IHMPrincipale.fusee1.getVPara(), 3));
 		put(boxVitDesc);
 		
-//		put(boxDebug);
+///		put(boxDebug);
 	}
 	
 	public void setter() {
-		//fusée
+		///fusée
 		IHMPrincipale.fusee1.setMasseSansMoteur(boxMasse.getValue() - IHMPrincipale.XMLMoteur1.getMasseTotaleMoteur());
 		IHMPrincipale.fusee1.setMasseMoteurPlein(boxMasse.getValue());
 		IHMPrincipale.fusee1.setCx(boxCx.getValue());
-		//rampe
+		///rampe
 		IHMPrincipale.fusee1.setLRampe(boxLongueurRampe.getValue());
 		IHMPrincipale.fusee1.setBetaRampe(boxInclinaisonRampe.getValue());
 		IHMPrincipale.fusee1.setAltRampe(boxAltitudeRampe.getValue());
-		//parachute
+		///parachute
 		IHMPrincipale.fusee1.setDatePara1(boxDatePara1.getValue());
 		IHMPrincipale.fusee1.setDatePara2(boxDatePara2.getValue());
 		IHMPrincipale.fusee1.setNombreParachutes(choiceNombrePara.getValue());
@@ -275,7 +275,7 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 		IHMPrincipale.fusee1.setCxPara1(boxCxPara1.getValue());
 		IHMPrincipale.fusee1.setCxPara2(boxCxPara2.getValue());
 		IHMPrincipale.fusee1.setVitVentPara(boxVitVent.getValue());
-		//rafraîchissement de l'affichage des données sur l'onglet de stabilité
+		///rafraîchissement de l'affichage des données sur l'onglet de stabilité
 		WidTJDataPanel.widStab.refresh();
 	}
 	
@@ -291,9 +291,9 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 				+ "\ndurée vol : " + IHMPrincipale.round(IHMPrincipale.fusee1.dureeVol, 3)
 				+ "\nportée balistique : " + IHMPrincipale.round(IHMPrincipale.fusee1.porteeBalistique, 3);
 		
-//		System.out.println("date de la vitesse max : " + IHMPrincipale.fusee1.dateVitesseMaximale);
-//		System.out.println("mach max : " + IHMPrincipale.fusee1.machMax);
-//		System.out.println("date de fin de propu : " + IHMPrincipale.fusee1.tempsFinProp);
+///		System.out.println("date de la vitesse max : " + IHMPrincipale.fusee1.dateVitesseMaximale);
+///		System.out.println("mach max : " + IHMPrincipale.fusee1.machMax);
+///		System.out.println("date de fin de propu : " + IHMPrincipale.fusee1.tempsFinProp);
 	}
 	
 	public void read() throws GException {
@@ -318,25 +318,25 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 			} else {
 				boxSurfPara2.setValue(IHMPrincipale.fusee1.surfacePara2);
 			}
-			// Il faut d'abord retirer toutes les séries
+			/// Il faut d'abord retirer toutes les séries
 			courbeAltitudePortee.removeAllSeries();
 			courbeAltitudeTemps.removeAllSeries();
-			//on actualise ensuite les séries de valeurs
+			///on actualise ensuite les séries de valeurs
 			Traj.nettoyeur(IHMPrincipale.fusee1);
 			setter();
 			Traj.calculTraj(IHMPrincipale.fusee1);
 			porteeMax = Math.max(IHMPrincipale.fusee1.xPorteePara[1], IHMPrincipale.fusee1.porteeBalistique);
 			dureeMax = Math.max(IHMPrincipale.fusee1.xTempsPara[1], IHMPrincipale.fusee1.tBalistique);
 			try {
-				// On rajoute ensuite les séries
-				//profil Altitude / Portée
+				/// On rajoute ensuite les séries
+				///profil Altitude / Portée
 				courbeAltitudePortee.addSerie("Trajectoire balistique", IHMPrincipale.fusee1.xPortee, IHMPrincipale.fusee1.zAltitude, 
 						Color.BLUE, true);
 				courbeAltitudePortee.addSerie("Trajectoire sous parachute", IHMPrincipale.fusee1.xPorteePara, 
 						IHMPrincipale.fusee1.zAltitudePara, Color.GREEN, true);
 				courbeAltitudePortee.setXZoom(0.0, porteeMax+30);
 				courbeAltitudePortee.setYZoom(false, 0.0, IHMPrincipale.fusee1.altitudeCulmination+30);
-				//profil Altitude / Temps
+				///profil Altitude / Temps
 				courbeAltitudeTemps.addSerie("Trajectoire balistique", IHMPrincipale.fusee1.xTemps, IHMPrincipale.fusee1.zAltitude, 
 						Color.BLUE, true);
 				courbeAltitudeTemps.addSerie("Trajectoire sous parachute", IHMPrincipale.fusee1.xTempsPara, 
@@ -344,19 +344,19 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 				courbeAltitudeTemps.setXZoom(0.0, dureeMax+2);
 				courbeAltitudeTemps.setYZoom(false, 0.0, IHMPrincipale.fusee1.altitudeCulmination+30);
 			} catch (GFreeChartException e) {
-				// TODO Auto-generated catch block
+				/// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//méthode pour ré-initialiser les tableaux de trajecto
+			///méthode pour ré-initialiser les tableaux de trajecto
 			Traj.nettoyeur(IHMPrincipale.fusee1);
 		}
 		if (arg0.contains(boxMasse, boxCx, boxAltitudeRampe, boxLongueurRampe, boxInclinaisonRampe, boxDatePara1, boxDatePara2, 
 				choiceNombrePara, boxDim1Para1, boxDim2Para1, boxDim1Para2, boxDim2Para2, 
 				boxCxPara1, boxCxPara2, boxVitVent)) {
-			// Il faut d'abord retirer toutes les séries
+			/// Il faut d'abord retirer toutes les séries
 			courbeAltitudePortee.removeAllSeries();
 			courbeAltitudeTemps.removeAllSeries();
-			// il faut ré-exécuter ces méthodes pour rafraîchir l'objet fusee1
+			/// il faut ré-exécuter ces méthodes pour rafraîchir l'objet fusee1
 			Traj.nettoyeur(IHMPrincipale.fusee1);
 			setter();
 			Traj.calculTraj(IHMPrincipale.fusee1);
@@ -365,15 +365,15 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 			porteeMax = Math.max(IHMPrincipale.fusee1.xPorteePara[1], IHMPrincipale.fusee1.porteeBalistique);
 			dureeMax = Math.max(IHMPrincipale.fusee1.xTempsPara[1], IHMPrincipale.fusee1.tBalistique);
 			try {
-				// On rajoute ensuite les séries
-				//profil Altitude / Portée
+				/// On rajoute ensuite les séries
+				///profil Altitude / Portée
 				courbeAltitudePortee.addSerie("Trajectoire balistique", IHMPrincipale.fusee1.xPortee, IHMPrincipale.fusee1.zAltitude, 
 						Color.BLUE, true);
 				courbeAltitudePortee.addSerie("Trajectoire sous parachute", IHMPrincipale.fusee1.xPorteePara, 
 						IHMPrincipale.fusee1.zAltitudePara, Color.GREEN, true);
 				courbeAltitudePortee.setXZoom(0.0, porteeMax+30);
 				courbeAltitudePortee.setYZoom(false, 0.0, IHMPrincipale.fusee1.altitudeCulmination+30);
-				//profil Altitude / Temps
+				///profil Altitude / Temps
 				courbeAltitudeTemps.addSerie("Trajectoire balistique", IHMPrincipale.fusee1.xTemps, IHMPrincipale.fusee1.zAltitude, 
 						Color.BLUE, true);
 				courbeAltitudeTemps.addSerie("Trajectoire sous parachute", IHMPrincipale.fusee1.xTempsPara, 
@@ -381,16 +381,16 @@ public class WidTraj extends GPanel implements GReadWrite, GListener {
 				courbeAltitudeTemps.setXZoom(0.0, dureeMax+2);
 				courbeAltitudeTemps.setYZoom(false, 0.0, IHMPrincipale.fusee1.altitudeCulmination+30);
 			} catch (GFreeChartException e) {
-				// TODO Auto-generated catch block
+				/// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//méthode pour ré-initialiser les tableaux de trajecto
+			///méthode pour ré-initialiser les tableaux de trajecto
 			Traj.nettoyeur(IHMPrincipale.fusee1);
 		}
 	}
 	
 	public void before(GEvent arg0) throws GException {
-		// Rien à faire ...
+		/// Rien à faire ...
 	}
 
 }

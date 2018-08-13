@@ -1,14 +1,14 @@
 package packageIHM;
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-//						TRAJEC JUNIOR						   //
-//						CNES/DLA/SDT/SPC				  	   //
-//					classe calculs de stabilité			 	   //
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~///
+///						TRAJEC JUNIOR						   ///
+///						CNES/DLA/SDT/SPC				  	   ///
+///					classe calculs de stabilité			 	   ///
+///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~///
 
 public class Stab {
 	
-	// ~~~~ Critères de stabilité ~~~~
+	/// ~~~~ Critères de stabilité ~~~~
 	protected static double critElancementMin = 0;
 	protected static double critElancementMax = 0;
 	protected static double critCnMin = 0;
@@ -17,7 +17,7 @@ public class Stab {
 	protected static double critMSMax = 0;
 	protected static double critCoupleMin = 0;
 	protected static double critCoupleMax = 0;
-	// Critères fusées à eau
+	/// Critères fusées à eau
 	private static double critElancementMinFusEau = 1;
 	private static double critElancementMaxFusEau = 100;
 	private static double critCnMinFusEau = 15;
@@ -26,7 +26,7 @@ public class Stab {
 	private static double critMSMaxFusEau = 3;
 	private static double critCoupleMinFusEau = 15;
 	private static double critCoupleMaxFusEau = 90;
-	// Critères micro fusées
+	/// Critères micro fusées
 	private static double critElancementMinMicroFu = 10;
 	private static double critElancementMaxMicroFu = 30;
 	private static double critCnMinMicroFu = 15;
@@ -35,7 +35,7 @@ public class Stab {
 	private static double critMSMaxMicroFu = 3;
 	private static double critCoupleMinMicroFu = 15;
 	private static double critCoupleMaxMicroFu = 100;
-	// Critères mini fusées et Rocketry Challenge
+	/// Critères mini fusées et Rocketry Challenge
 	private static double critElancementMinMiniF = 10;
 	private static double critElancementMaxMiniF = 20;
 	public static double critCnMinMiniF = 15;
@@ -44,7 +44,7 @@ public class Stab {
 	public static double critMSMaxMiniF = 6;
 	private static double critCoupleMinMiniF = 30;
 	private static double critCoupleMaxMiniF = 100;
-	// Critères fusées expérimentales
+	/// Critères fusées expérimentales
 	private static double critElancementMinFusEx = 10;
 	private static double critElancementMaxFusEx = 35;
 	private static double critCnMinFusEx = 15;
@@ -54,7 +54,7 @@ public class Stab {
 	private static double critCoupleMinFusEx = 40;
 	private static double critCoupleMaxFusEx = 100;
 	
-//~~~~~~~~~~~~~~~~	Méthode principale ~~~~~~~~~~~~~~~~//
+///~~~~~~~~~~~~~~~~	Méthode principale ~~~~~~~~~~~~~~~~///
 	
 public static void calculStab(Fusee pFusee) {
 	testNbreAilerons(pFusee);
@@ -65,14 +65,14 @@ public static void calculStab(Fusee pFusee) {
 	criteresDeStabilite(pFusee);
 }
 	
-//~~~~~~~~~~~~~~~~	Calculs	~~~~~~~~~~~~~~~~//
+///~~~~~~~~~~~~~~~~	Calculs	~~~~~~~~~~~~~~~~///
 
 	public static void gradientsDePortance(Fusee pFusee)	{
 	
-	//_____	CALCULS DES GRADIENTS DE PORTANCE	_____
+	///_____	CALCULS DES GRADIENTS DE PORTANCE	_____
 		
-	//Calcul de la portance des ailerons
-		pFusee.dRef = pFusee.dOgive; // le plus souvent
+	///Calcul de la portance des ailerons
+		pFusee.dRef = pFusee.dOgive; /// le plus souvent
 	if (pFusee.nombreJeuxAil == 0) {
 		pFusee.cnAil = 0;
 		pFusee.cnCan = 0;
@@ -86,7 +86,7 @@ public static void calculStab(Fusee pFusee) {
 	} else {
 		pFusee.cnAil = diederich(pFusee.flecheAil, pFusee.saumonAil, pFusee.emplantureAil, pFusee.envergureAil, pFusee.nombreAil, pFusee.dOgive, pFusee.dAil);
 		pFusee.cnCan = diederich(pFusee.flecheCan, pFusee.saumonCan, pFusee.emplantureCan, pFusee.envergureCan, pFusee.nombreCan, pFusee.dOgive, pFusee.dCan);
-		//Calcul de la portance des ailerons du bas en 1/2 masqué
+		///Calcul de la portance des ailerons du bas en 1/2 masqué
 		if ((pFusee.dCan/2)+pFusee.envergureCan <= pFusee.dAil/2) {
 			pFusee.envergureMasq = 0;
 		} else if ((pFusee.dCan/2)+pFusee.envergureCan >= (pFusee.dAil/2)+pFusee.envergureAil) {
@@ -96,28 +96,28 @@ public static void calculStab(Fusee pFusee) {
 		}
 		pFusee.saumonMasq = pFusee.saumonAil+(pFusee.emplantureAil-pFusee.saumonAil)*(1-(pFusee.envergureMasq/pFusee.envergureAil));
 		pFusee.flecheMasq = pFusee.flecheAil*pFusee.envergureMasq/pFusee.envergureAil;
-		//il faut vérifier qu'il y ait bien le même nombre d'ailerons
+		///il faut vérifier qu'il y ait bien le même nombre d'ailerons
 		if (pFusee.nombreCan != pFusee.nombreAil){
 			System.out.println("Les deux jeux d'ailerons ne sont pas superposés");
-			pFusee.nombreMasq = 0;			//ceci annulera l'effet des ailerons du haut sur ceux du bas
+			pFusee.nombreMasq = 0;			///ceci annulera l'effet des ailerons du haut sur ceux du bas
 		} else {
 			pFusee.nombreMasq = pFusee.nombreAil;
 		}
 		pFusee.xMasq = pFusee.xAil;
-		//l'emplanture masquée est forcément celle des ailerons du bas
+		///l'emplanture masquée est forcément celle des ailerons du bas
 		pFusee.cnMasq = diederich(pFusee.flecheMasq, pFusee.saumonMasq, pFusee.emplantureAil, pFusee.envergureMasq, pFusee.nombreMasq, pFusee.dOgive, pFusee.dAil);
 	}
 
 	pFusee.cnAi = pFusee.cnAil-pFusee.cnMasq/2;
 		
-	//Calcul de la portance de l'ogive
-	if (pFusee.typeOgive == 0) {	//Pas d'ogive
+	///Calcul de la portance de l'ogive
+	if (pFusee.typeOgive == 0) {	///Pas d'ogive
 		pFusee.cnO = 0;
 	} else {
 		pFusee.cnO = 2*Math.pow(pFusee.dOgive/pFusee.dRef,2);
 	}
 	
-	//Calcul de la portance des transitions
+	///Calcul de la portance des transitions
 	switch (pFusee.nombreTransitions) {
 	case 0:
 		pFusee.cnA = 0;
@@ -133,7 +133,7 @@ public static void calculStab(Fusee pFusee) {
 	break;
 	}
 	 
-	//Calcul de la portance globale de la fusée
+	///Calcul de la portance globale de la fusée
 	if(pFusee.nombreJeuxAil != 3){
 		pFusee.cn = pFusee.cnAil+pFusee.cnCan+pFusee.cnO+pFusee.cnA+pFusee.cnB;
 	} else {
@@ -144,7 +144,7 @@ public static void calculStab(Fusee pFusee) {
 
 	public static void centresDeGravité(Fusee pFusee)	{
 			
-		//_____	CALCULS DES CENTRES DE GRAVITE	_____//
+		///_____	CALCULS DES CENTRES DE GRAVITE	_____///
 		
 		pFusee.masseVide = pFusee.masseSansMoteur+IHMPrincipale.XMLMoteur1.getMasseaVideMoteur();
 		pFusee.massePlein = pFusee.masseSansMoteur+IHMPrincipale.XMLMoteur1.getMasseTotaleMoteur();
@@ -160,17 +160,17 @@ public static void calculStab(Fusee pFusee) {
 			pFusee.xPropuPlein = pFusee.xPropuVide;
 		}
 		
-		if (pFusee.etatMoteur == 0) { // cas sans moteur
+		if (pFusee.etatMoteur == 0) { /// cas sans moteur
 			pFusee.xCGVide = (pFusee.xCG*pFusee.masseSansMoteur+((pFusee.xPropuRef-IHMPrincipale.XMLMoteur1.getLongueurMoteur()+pFusee.xPropuVide)*IHMPrincipale.XMLMoteur1.getMasseaVideMoteur()))/pFusee.masseVide;
 			pFusee.xCGPlein = (pFusee.xCG*pFusee.masseSansMoteur+((pFusee.xPropuRef-IHMPrincipale.XMLMoteur1.getLongueurMoteur()+pFusee.xPropuPlein)*IHMPrincipale.XMLMoteur1.getMasseTotaleMoteur()))/pFusee.massePlein;
-		} else if (pFusee.etatMoteur == 1) { // cas avec moteur vide
-			// idéalement il faudrait pouvoir disposer du centre de gravité du pain de poudre
-			// arbitrairement on a pris la valeur moyenne des cdg du moteur plein et du moteur vide
+		} else if (pFusee.etatMoteur == 1) { /// cas avec moteur vide
+			/// idéalement il faudrait pouvoir disposer du centre de gravité du pain de poudre
+			/// arbitrairement on a pris la valeur moyenne des cdg du moteur plein et du moteur vide
 			pFusee.xCGVide = pFusee.xCG;
 			pFusee.xCGPlein = (pFusee.xCGVide*pFusee.masseVide+((pFusee.xPropuRef-IHMPrincipale.XMLMoteur1.getLongueurMoteur()+((pFusee.xPropuVide+pFusee.xPropuPlein)/2)*IHMPrincipale.XMLMoteur1.getMassePropergolMoteur())))/pFusee.massePlein;
-		} else if (pFusee.etatMoteur == 2) { // cas avec moteur plein
-			// idéalement il faudrait pouvoir disposer du centre de gravité du pain de poudre
-			// arbitrairement on a pris la valeur moyenne des cdg du moteur plein et du moteur vide
+		} else if (pFusee.etatMoteur == 2) { /// cas avec moteur plein
+			/// idéalement il faudrait pouvoir disposer du centre de gravité du pain de poudre
+			/// arbitrairement on a pris la valeur moyenne des cdg du moteur plein et du moteur vide
 			pFusee.xCGPlein = pFusee.xCG;
 			pFusee.xCGVide = (pFusee.xCGPlein*pFusee.massePlein-((pFusee.xPropuRef-IHMPrincipale.XMLMoteur1.getLongueurMoteur()+((pFusee.xPropuVide+pFusee.xPropuPlein)/2)*IHMPrincipale.XMLMoteur1.getMassePropergolMoteur())))/pFusee.masseVide;
 		}
@@ -179,51 +179,51 @@ public static void calculStab(Fusee pFusee) {
 	
 	public static void foyersDePortance(Fusee pFusee) {
 			
-		//_____	CALCULS DES FOYERS DE PORTANCE	_____			
+		///_____	CALCULS DES FOYERS DE PORTANCE	_____			
 		
-		//foyer de portance des ailerons du haut
+		///foyer de portance des ailerons du haut
 		pFusee.xCPCan = pFusee.xCan-pFusee.emplantureCan+pFusee.flecheCan*(pFusee.emplantureCan+2*pFusee.saumonCan)/(3*(pFusee.emplantureCan+pFusee.saumonCan))+(pFusee.emplantureCan+pFusee.saumonCan-pFusee.emplantureCan*pFusee.saumonCan/(pFusee.emplantureCan+pFusee.saumonCan))/6;
 		
-		//foyer de portance de la partie masquée des ailerons du bas
+		///foyer de portance de la partie masquée des ailerons du bas
 		if(pFusee.nombreJeuxAil != 3){
 			pFusee.xCPMasq = 0;
 		} else {
-			// l'emplanture masquée est forcément égale à celle des ailerons du bas
+			/// l'emplanture masquée est forcément égale à celle des ailerons du bas
 			pFusee.xCPMasq = pFusee.xMasq-pFusee.emplantureAil+pFusee.flecheMasq*(pFusee.emplantureAil+2*pFusee.saumonMasq)/(3*(pFusee.emplantureAil+pFusee.saumonMasq))+(pFusee.emplantureAil+pFusee.saumonMasq-pFusee.emplantureAil*pFusee.saumonMasq/(pFusee.emplantureAil+pFusee.saumonMasq))/6;
 		}
 			
-		//foyer de portance des ailerons du bas
+		///foyer de portance des ailerons du bas
 		pFusee.xCPAil = pFusee.xAil-pFusee.emplantureAil+pFusee.flecheAil*(pFusee.emplantureAil+2*pFusee.saumonAil)/(3*(pFusee.emplantureAil+pFusee.saumonAil))+(pFusee.emplantureAil+pFusee.saumonAil-pFusee.emplantureAil*pFusee.saumonAil/(pFusee.emplantureAil+pFusee.saumonAil))/6;
 		
-		//foyer de portance global des ailerons masqués
+		///foyer de portance global des ailerons masqués
 		pFusee.xCPTot = (pFusee.xCPAil*pFusee.cnAil-0.5*pFusee.xCPMasq*pFusee.cnMasq)/pFusee.cnAi;
 			
-		//foyer de portance de la jupe
+		///foyer de portance de la jupe
 		if (pFusee.d1A == pFusee.d2A || pFusee.d2A == 0 || pFusee.nombreTransitions == 0) {
 			pFusee.xCPTransitionA = 0;
 		} else {
 			pFusee.xCPTransitionA = pFusee.xA+pFusee.lA/3*(1+1/(1+pFusee.d1A/pFusee.d2A));
 		}
 			
-		//foyer de portance du rétreint
+		///foyer de portance du rétreint
 		if (pFusee.d1B == pFusee.d2B || pFusee.d2B == 0 || pFusee.nombreTransitions != 2) {
 			pFusee.xCPTransitionB=0;
 		} else {
 			pFusee.xCPTransitionB = pFusee.xB+pFusee.lB/3*(1+1/(1+pFusee.d1B/pFusee.d2B));
 		}
 			
-		//foyer de portance de l'ogive
-		if (pFusee.typeOgive == 0) {		//Pas d'ogive
+		///foyer de portance de l'ogive
+		if (pFusee.typeOgive == 0) {		///Pas d'ogive
 			pFusee.xCPOgive = 0;
-		} else if (pFusee.typeOgive == 1) {	//Parabolique
+		} else if (pFusee.typeOgive == 1) {	///Parabolique
 			pFusee.xCPOgive = 1.0/2.0*pFusee.longOgive;
-		} else if (pFusee.typeOgive == 2) {	//Ogivale
+		} else if (pFusee.typeOgive == 2) {	///Ogivale
 			pFusee.xCPOgive = 7.0/15.0*pFusee.longOgive;
-		} else if (pFusee.typeOgive == 3) {	//Conique
+		} else if (pFusee.typeOgive == 3) {	///Conique
 			pFusee.xCPOgive = 2.0/3.0*pFusee.longOgive;
 		}
 			
-		//foyer de portance global de la fusée
+		///foyer de portance global de la fusée
 		if (pFusee.nombreJeuxAil != 3) {
 			pFusee.xCPFusee = (pFusee.cnAil*pFusee.xCPAil+pFusee.cnCan*pFusee.xCPCan+pFusee.cnA*pFusee.xCPTransitionA+pFusee.cnB*pFusee.xCPTransitionB+pFusee.cnO*pFusee.xCPOgive)/pFusee.cn;
 		} else {
@@ -233,7 +233,7 @@ public static void calculStab(Fusee pFusee) {
 	}
 	
 	public static void criteresDeStabilite (Fusee pFusee) {
-		//_____	CALCULS DES CRITERES DE STABILITE	_____
+		///_____	CALCULS DES CRITERES DE STABILITE	_____
 		pFusee.msMin = (pFusee.xCPFusee-pFusee.xCGPlein)/pFusee.dRef;
 		pFusee.msMax = (pFusee.xCPFusee-pFusee.xCGVide)/pFusee.dRef;
 		pFusee.elancement = pFusee.longTot/pFusee.dRef;
@@ -241,9 +241,9 @@ public static void calculStab(Fusee pFusee) {
 		pFusee.coupleMax = pFusee.msMax*pFusee.cn;
 	}
 		
-	// METHODE D'ATTRIBUTION DES DIAMETRES
+	/// METHODE D'ATTRIBUTION DES DIAMETRES
 	public static void logiqueDiamètres(Fusee pFusee) {
-		// si les ailerons sont sur l'ogive, une transition ou confondus avec les ailerons du bas, erreur de saisie
+		/// si les ailerons sont sur l'ogive, une transition ou confondus avec les ailerons du bas, erreur de saisie
 		switch (pFusee.nombreTransitions) {
 		case 0:
 			if (pFusee.xAil-pFusee.emplantureAil < pFusee.longOgive) {
@@ -305,7 +305,7 @@ public static void calculStab(Fusee pFusee) {
 		}
 	}
 		
-	// METHODE PROTEGEANT LE NOMBRE D'AILERONS
+	/// METHODE PROTEGEANT LE NOMBRE D'AILERONS
 	public static void testNbreAilerons(Fusee pFusee) {
 		if ((pFusee.nombreAil != 3) && (pFusee.nombreAil != 4) && (pFusee.nombreAil != 6)) {
 			System.out.println("Le jeu d'ailerons du bas a un nombre d'ailerons incorrect !");
@@ -338,7 +338,7 @@ public static void calculStab(Fusee pFusee) {
 	}
 	
 	public static void diagnostic(String categorie) {
-//		WidStab.boiteAuxLettres = "";
+///		WidStab.boiteAuxLettres = "";
 		switch (categorie) {
 		case "Fusée à eau":
 			critElancementMin = critElancementMinFusEau;
@@ -433,10 +433,10 @@ public static void calculStab(Fusee pFusee) {
 	}
 		
 	
-// ************* Mutateurs *************
+/// ************* Mutateurs *************
 
 
-// ************* Accesseurs *************
+/// ************* Accesseurs *************
 public static double getCritCnMax()  {  
 	return critCnMax;	}
 public static double getCritCnMin()  {  

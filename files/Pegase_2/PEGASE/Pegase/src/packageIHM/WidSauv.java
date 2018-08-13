@@ -5,21 +5,21 @@ import fr.cnes.genius.lowLevel.GPanel;
 
 public class WidSauv extends GPanel {
 
-	//déclaration des composants
+	///déclaration des composants
 	
 	public WidSauv() {
-		//contraintes des composants
+		///contraintes des composants
 	}
 
 	@Override
 	public void display() throws GException {
-		// TODO Auto-generated method stub
+		/// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void generic() throws GException {
-		// TODO Auto-generated method stub
+		/// TODO Auto-generated method stub
 		
 	}
 

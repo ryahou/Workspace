@@ -1,0 +1,66 @@
+\hypertarget{classpackage_i_h_m_1_1_x_m_l_writer_engine}{}\section{package\+I\+H\+M.\+X\+M\+L\+Writer\+Engine Class Reference}
+\label{classpackage_i_h_m_1_1_x_m_l_writer_engine}\index{package\+I\+H\+M.\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M.\+X\+M\+L\+Writer\+Engine}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classpackage_i_h_m_1_1_x_m_l_writer_engine_a034600829c2639024d05ca1f8817548d}{begin\+Txt\+To\+Xml}} (String nom\+Fichier\+A\+Ajouter, String xml\+Root\+Name)
+\item 
+static void \mbox{\hyperlink{classpackage_i_h_m_1_1_x_m_l_writer_engine_a232a93b9139813d46e3124712864054d}{open\+Xml}} (String xml\+Root\+Name)  throws Parser\+Configuration\+Exception, Transformer\+Configuration\+Exception, S\+A\+X\+Exception 
+\item 
+static void \mbox{\hyperlink{classpackage_i_h_m_1_1_x_m_l_writer_engine_ac18b22451d5382bfd52862c7c409334d}{process\+\_\+line}} (String s)  throws S\+A\+X\+Exception 
+\item 
+static void \mbox{\hyperlink{classpackage_i_h_m_1_1_x_m_l_writer_engine_a7f0d2ba3ee92e5dd2297f7b4c37eb756}{close\+Xml}} (String xml\+Root\+Name)  throws S\+A\+X\+Exception 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \mbox{\hyperlink{classpackage_i_h_m_1_1_x_m_l_writer_engine_a085cb96009b631ffd6a02feb519edb17}{detente}} = \mbox{\hyperlink{classpackage_i_h_m_1_1_i_h_m_principale_a35c976eb40d2eef2dbb89b2b0befb0fb}{I\+H\+M\+Principale.\+get\+Ajouter\+Moteur}}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpackage_i_h_m_1_1_x_m_l_writer_engine_a034600829c2639024d05ca1f8817548d}\label{classpackage_i_h_m_1_1_x_m_l_writer_engine_a034600829c2639024d05ca1f8817548d}} 
+\index{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}!begin\+Txt\+To\+Xml@{begin\+Txt\+To\+Xml}}
+\index{begin\+Txt\+To\+Xml@{begin\+Txt\+To\+Xml}!package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}}
+\subsubsection{\texorpdfstring{begin\+Txt\+To\+Xml()}{beginTxtToXml()}}
+{\footnotesize\ttfamily static void package\+I\+H\+M.\+X\+M\+L\+Writer\+Engine.\+begin\+Txt\+To\+Xml (\begin{DoxyParamCaption}\item[{String}]{nom\+Fichier\+A\+Ajouter,  }\item[{String}]{xml\+Root\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Object converting .txt files into .xml files 
+\begin{DoxyParams}{Parameters}
+{\em nom\+Fichier\+A\+Ajouter} & \+: name of the .txt file to be converted \\
+\hline
+{\em xml\+Root\+Name} & \+: name of the X\+ML root of the file (\char`\"{}moteur\char`\"{} for the engines files) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classpackage_i_h_m_1_1_x_m_l_writer_engine_a7f0d2ba3ee92e5dd2297f7b4c37eb756}\label{classpackage_i_h_m_1_1_x_m_l_writer_engine_a7f0d2ba3ee92e5dd2297f7b4c37eb756}} 
+\index{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}!close\+Xml@{close\+Xml}}
+\index{close\+Xml@{close\+Xml}!package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}}
+\subsubsection{\texorpdfstring{close\+Xml()}{closeXml()}}
+{\footnotesize\ttfamily static void package\+I\+H\+M.\+X\+M\+L\+Writer\+Engine.\+close\+Xml (\begin{DoxyParamCaption}\item[{String}]{xml\+Root\+Name }\end{DoxyParamCaption}) throws S\+A\+X\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpackage_i_h_m_1_1_x_m_l_writer_engine_a232a93b9139813d46e3124712864054d}\label{classpackage_i_h_m_1_1_x_m_l_writer_engine_a232a93b9139813d46e3124712864054d}} 
+\index{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}!open\+Xml@{open\+Xml}}
+\index{open\+Xml@{open\+Xml}!package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}}
+\subsubsection{\texorpdfstring{open\+Xml()}{openXml()}}
+{\footnotesize\ttfamily static void package\+I\+H\+M.\+X\+M\+L\+Writer\+Engine.\+open\+Xml (\begin{DoxyParamCaption}\item[{String}]{xml\+Root\+Name }\end{DoxyParamCaption}) throws Parser\+Configuration\+Exception, Transformer\+Configuration\+Exception, S\+A\+X\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classpackage_i_h_m_1_1_x_m_l_writer_engine_ac18b22451d5382bfd52862c7c409334d}\label{classpackage_i_h_m_1_1_x_m_l_writer_engine_ac18b22451d5382bfd52862c7c409334d}} 
+\index{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}!process\+\_\+line@{process\+\_\+line}}
+\index{process\+\_\+line@{process\+\_\+line}!package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}}
+\subsubsection{\texorpdfstring{process\+\_\+line()}{process\_line()}}
+{\footnotesize\ttfamily static void package\+I\+H\+M.\+X\+M\+L\+Writer\+Engine.\+process\+\_\+line (\begin{DoxyParamCaption}\item[{String}]{s }\end{DoxyParamCaption}) throws S\+A\+X\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classpackage_i_h_m_1_1_x_m_l_writer_engine_a085cb96009b631ffd6a02feb519edb17}\label{classpackage_i_h_m_1_1_x_m_l_writer_engine_a085cb96009b631ffd6a02feb519edb17}} 
+\index{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}!detente@{detente}}
+\index{detente@{detente}!package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine@{package\+I\+H\+M\+::\+X\+M\+L\+Writer\+Engine}}
+\subsubsection{\texorpdfstring{detente}{detente}}
+{\footnotesize\ttfamily boolean package\+I\+H\+M.\+X\+M\+L\+Writer\+Engine.\+detente = \mbox{\hyperlink{classpackage_i_h_m_1_1_i_h_m_principale_a35c976eb40d2eef2dbb89b2b0befb0fb}{I\+H\+M\+Principale.\+get\+Ajouter\+Moteur}}()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+d\+:/\+Users/ryahou/\+Desktop/\+Workspace/files/\+Pegase\+\_\+2/\+P\+E\+G\+A\+S\+E/\+Pegase/src/package\+I\+H\+M/\mbox{\hyperlink{_x_m_l_writer_engine_8java}{X\+M\+L\+Writer\+Engine.\+java}}\end{DoxyCompactItemize}

@@ -1,9 +1,9 @@
 package packageIHM;
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-//      				 TRAJEC JUNIOR						   //
-//						CNES/DLA/SDT/SPC				  	   //
-//					classe conversion .txt -> .xml		 	   //
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~///
+///      				 TRAJEC JUNIOR						   ///
+///						CNES/DLA/SDT/SPC				  	   ///
+///					classe conversion .txt -> .xml		 	   ///
+///~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~///
 
 import java.io.*;
 
@@ -16,9 +16,9 @@ import javax.xml.transform.sax.*;
 
 public class XMLWriterEngine {
 	
-	public static boolean detente = IHMPrincipale.getAjouterMoteur(); // variable pour commander l'activité ou l'inactivité de la méthode
+	public static boolean detente = IHMPrincipale.getAjouterMoteur(); /// variable pour commander l'activité ou l'inactivité de la méthode
 	
-//	String nomFichierMoteurAAjouter = "Wapiti";
+///	String nomFichierMoteurAAjouter = "Wapiti";
 		
     static BufferedReader in;
     static StreamResult out;
@@ -39,7 +39,7 @@ public class XMLWriterEngine {
     			in = new BufferedReader(new FileReader(nomFichierAAjouter + ".txt"));
     			out = new StreamResult(nomFichierAAjouter + ".xml");
     			openXml(xmlRootName);
-    			// prépare la lecture ligne par ligne
+    			/// prépare la lecture ligne par ligne
     			String str;
     			while ((str = in.readLine()) != null) {
     				process_line(str);
@@ -67,9 +67,9 @@ public class XMLWriterEngine {
 
     public static void process_line(String s) throws SAXException {
     	th.startElement(null, null, "titre", null);
-    	//début string
+    	///début string
     	th.characters(s.toCharArray(), 0, s.length());
-    	//fin string
+    	///fin string
     	th.endElement(null, null, "titre");
     }
 

@@ -20,10 +20,10 @@ public class IHMPrincipale {
 	public static Fusee fusee1 = new Fusee();
 	public static XMLReader XMLMoteur1 = new XMLReader();
 	
-//	private int NumeroProjet=1;			//Numéro du projet
-//	private String Nom="";				//Nom de la fusée
-//	private String Club="";				//Nom du club
-	private static boolean ajouterMoteur = false;	//permet de régler la classe XML sur création de fichier (true) ou passive (false)
+///	private int NumeroProjet=1;			///Numéro du projet
+///	private String Nom="";				///Nom de la fusée
+///	private String Club="";				///Nom du club
+	private static boolean ajouterMoteur = false;	///permet de régler la classe XML sur création de fichier (true) ou passive (false)
 	private static String ephemFileName;
 	
 	public static GUnit[] unitMasse = { new GMetricUnit("g"), new GMetricUnit("kg") };
@@ -35,18 +35,18 @@ public class IHMPrincipale {
 	
 	public static void main(String[] args) throws GException {
 		
-//		// début code pour plusieurs écrans
-////		Rectangle virtualBounds = new Rectangle();
-////		  GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-////		  GraphicsDevice[] gs = ge.getScreenDevices();
-////		  for (int j = 0; j < gs.length; j++) { 
-////		      GraphicsDevice gd = gs[j];
-////		      GraphicsConfiguration[] gc = gd.getConfigurations();
-////		      for (int i=0; i < gc.length; i++) {
-////		          virtualBounds = virtualBounds.union(gc[i].getBounds());
-////		      }
-////		  } 
-//		// fin code pour plusieurs écrans
+///		// début code pour plusieurs écrans
+///		Rectangle virtualBounds = new Rectangle();
+///		  GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+///		  GraphicsDevice[] gs = ge.getScreenDevices();
+///		  for (int j = 0; j < gs.length; j++) { 
+///		      GraphicsDevice gd = gs[j];
+///		      GraphicsConfiguration[] gc = gd.getConfigurations();
+///		      for (int i=0; i < gc.length; i++) {
+///		          virtualBounds = virtualBounds.union(gc[i].getBounds());
+///		      }
+///		  } 
+///		/// fin code pour plusieurs écrans
 		
 		@SuppressWarnings("unused")
 		WidTJDataPanel dataPan = new WidTJDataPanel();
@@ -63,7 +63,7 @@ public class IHMPrincipale {
          * @param ephemFileName
          * The "\n" are used in the translation from .txt to .xml in the XMLWriterEngine.
          */
-        // Writing in the result EPHEM file
+        /// Writing in the result EPHEM file
     	FileWriter ephemFile = null;
     	try {
             ephemFile = new FileWriter(ephemFileName + ".txt");
@@ -94,11 +94,11 @@ public static double round(double value, int places) {
     return bd.doubleValue();
 }
     
- // ************* Mutateurs *************
+ /// ************* Mutateurs *************
     public static void setEphemFileName(String pEphemFileName) {
 		ephemFileName = pEphemFileName;	}
 
- // ************* Accesseurs *************
+ /// ************* Accesseurs *************
 	public static String getEphemFileName() {
 		return ephemFileName;	}
 	public static boolean getAjouterMoteur()  {  
